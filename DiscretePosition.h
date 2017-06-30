@@ -3,54 +3,50 @@
 
 class DiscretePosition;
 
-#include "defines.h"
 #include "Position.h"
+#include "defines.h"
 
-class DiscretePosition
-{
- public:
-  
-  DiscretePosition()
+class DiscretePosition {
+public:
+    DiscretePosition()
     {
-      x = 0;
-      y = 0;
-    }
-  
-  DiscretePosition(int i, int j)
-    {
-      x = i;
-      y = j;
+        x = 0;
+        y = 0;
     }
 
-  DiscretePosition(Position pos)
+    DiscretePosition(int i, int j)
     {
-      x = (int) round((pos.getX()+LAB_X)*MAZE_DEF);
-      y = (int) round((pos.getY()+LAB_Y)*MAZE_DEF);
+        x = i;
+        y = j;
     }
 
-  double distance(const DiscretePosition &other) const
+    DiscretePosition(Position pos)
     {
-      return MathTools::distance(getX(),getY(),other.getX(),other.getY());
+        x = (int)round((pos.getX() + LAB_X) * MAZE_DEF);
+        y = (int)round((pos.getY() + LAB_Y) * MAZE_DEF);
     }
 
-  void incX() { x++; }
-  void incY() { y++; }
-  int getX() const { return x; }
-  int getY() const { return y; }
-  void setX(int xx) { x=xx; }
-  void setY(int yy) { y=yy; }
+    double distance(const DiscretePosition& other) const
+    {
+        return MathTools::distance(getX(), getY(), other.getX(), other.getY());
+    }
 
-  Position getPosition() { return Position(((double)x/MAZE_DEF)-LAB_X,
-					   ((double)y/MAZE_DEF)-LAB_Y); }
+    void incX() { x++; }
+    void incY() { y++; }
+    int getX() const { return x; }
+    int getY() const { return y; }
+    void setX(int xx) { x = xx; }
+    void setY(int yy) { y = yy; }
 
-  bool operator==(DiscretePosition & p) const { return ((getX() == p.getX()) &&
-							(getY() == p.getY())); }
-  bool operator!=(DiscretePosition & p) const { return !(getX() == p.getX() &&
-							 getY() == p.getY()); }
-  
- private:
-  int x;
-  int y;
+    Position getPosition() { return Position(((double)x / MAZE_DEF) - LAB_X,
+        ((double)y / MAZE_DEF) - LAB_Y); }
+
+    bool operator==(DiscretePosition& p) const { return ((getX() == p.getX()) && (getY() == p.getY())); }
+    bool operator!=(DiscretePosition& p) const { return !(getX() == p.getX() && getY() == p.getY()); }
+
+private:
+    int x;
+    int y;
 };
 
 #endif

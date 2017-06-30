@@ -37,12 +37,12 @@ class Mouse;
 
 #include <getopt.h>
 
-#include "WorldState.h"
 #include "Connection.h"
 #include "Log.h"
-#include "MotorController.h"
 #include "Meditator.h"
+#include "MotorController.h"
 #include "SensorRequest.h"
+#include "WorldState.h"
 #include "viewer/WSviewer.h"
 
 using namespace std;
@@ -54,28 +54,26 @@ using namespace std;
  * Contém o ciclo de processamento.
  */
 
-class Mouse
-{
- public:
-  
-  /**
+class Mouse {
+public:
+    /**
    * \brief Função onde é iniciado o codigo
    * 
    * Esta é a funçao onde começa a execução do agente.
    * Aqui é criado um objecto da classe Mouse e é executado
    * o método de comportamental.
    */
-  int main(int argc, char *argv[]);
-  
-  /**
+    int main(int argc, char* argv[]);
+
+    /**
    * \brief Constructor da classe Mouse.
    * 
    * Aqui é inicializado o agente de acordo com as opções enviadas na linha
    * de comando
    */
-  Mouse(int argc, char *argv[]);
-  
-  /**
+    Mouse(int argc, char* argv[]);
+
+    /**
    * \brief Ciclo central de processamento do rato.
    * 
    * Ciclo onde o agente executa o seu processamento.
@@ -83,102 +81,101 @@ class Mouse
    * É calculada a melhor acÃ§Ã£o.
    * É executada a acÃ§Ã£o calculada.
    */
-  void behave();
- private:
+    void behave();
 
-  /**
+private:
+    /**
    * \brief Parse das opções de linha de comando.
    * 
    * Aqui são analisadas as opções de linha de comando
    */
-  void parse_opt(int argc,char *argv[]);
-  
-  /**
+    void parse_opt(int argc, char* argv[]);
+
+    /**
    * \brief Estado do mundo do agente.
    * 
    * Estado do mundo do agente, organizado por camadas.
    */
-  WorldState *ws;
-  
-  /**
+    WorldState* ws;
+
+    /**
    * \brief Ligação com o servidor.
    * 
    * Ligação com o servidor do ciberrato.
    */
-  Connection *con;
+    Connection* con;
 
-  /**
+    /**
    * \brief Log.
    * 
    * Log das acções.
    */
-  Log *log;
-  
-  /**
+    Log* log;
+
+    /**
    * \brief Camada de acesso aos motores.
    * 
    * Camada que faz a abstracçãoo da comunicação com os motores.
-   */  
-  MotorController * motor;
+   */
+    MotorController* motor;
 
-  /**
+    /**
    * \brief Camada de decisão do agente.
    * 
    * Camada que toma as decisões
    */
-  Meditator * med;
+    Meditator* med;
 
-  /**
+    /**
    * \brief Opção de linha de comandos.
    * 
    * Opção de linha de comandos
    */
-  char host[30]; 
- 
-  /**
-   * \brief Opção de linha de comandos.
-   * 
-   * Opção de linha de comandos
-   */
-  char name[30];
- 
-  /**
-   * \brief Opção de linha de comandos.
-   * 
-   * Opção de linha de comandos
-   */
-  char pwsname[30];
- 
-  /**
-   * \brief Opção de linha de comandos.
-   * 
-   * Opção de linha de comandos
-   */
-  int pos;
- 
-  /**
-   * \brief Opção de linha de comandos.
-   * 
-   * Opção de linha de comandos
-   */
-  bool dolog;
- 
-  /**
-   * \brief Opção de linha de comandos.
-   * 
-   * Opção de linha de comandos
-   */
-  bool pws;
- 
-  /**
-   * \brief Opção de linha de comandos.
-   * 
-   * Opção de linha de comandos
-   */
-  bool wsv;
+    char host[30];
 
-     ws_and_con_and_log wscon;
+    /**
+   * \brief Opção de linha de comandos.
+   * 
+   * Opção de linha de comandos
+   */
+    char name[30];
 
+    /**
+   * \brief Opção de linha de comandos.
+   * 
+   * Opção de linha de comandos
+   */
+    char pwsname[30];
+
+    /**
+   * \brief Opção de linha de comandos.
+   * 
+   * Opção de linha de comandos
+   */
+    int pos;
+
+    /**
+   * \brief Opção de linha de comandos.
+   * 
+   * Opção de linha de comandos
+   */
+    bool dolog;
+
+    /**
+   * \brief Opção de linha de comandos.
+   * 
+   * Opção de linha de comandos
+   */
+    bool pws;
+
+    /**
+   * \brief Opção de linha de comandos.
+   * 
+   * Opção de linha de comandos
+   */
+    bool wsv;
+
+    ws_and_con_and_log wscon;
 };
 
 #endif

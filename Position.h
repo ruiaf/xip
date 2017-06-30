@@ -5,24 +5,27 @@ class Position;
 
 #include "MathTools.h"
 #include <stdio.h>
-class Position
-{
+class Position {
 public:
-  Position(double x=0.0, double y=0.0) { PosX=x; PosY=y; }
-
-  double getX() const { return PosX; }
-  double getY() const { return PosY; }
-  void setX(double x) { PosX=x; }
-  void setY(double y) { PosY=y; }
-  double distance(const Position &other) const
+    Position(double x = 0.0, double y = 0.0)
     {
-      return MathTools::distance(getX(),getY(),other.getX(),other.getY());
+        PosX = x;
+        PosY = y;
     }
-  void print() { printf("(Pos x:%lf y:%lf)\n",PosX,PosY); }
-  
+
+    double getX() const { return PosX; }
+    double getY() const { return PosY; }
+    void setX(double x) { PosX = x; }
+    void setY(double y) { PosY = y; }
+    double distance(const Position& other) const
+    {
+        return MathTools::distance(getX(), getY(), other.getX(), other.getY());
+    }
+    void print() { printf("(Pos x:%lf y:%lf)\n", PosX, PosY); }
+
 private:
-  double PosX;
-  double PosY;
+    double PosX;
+    double PosY;
 };
 
 #endif

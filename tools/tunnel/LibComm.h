@@ -2,9 +2,9 @@
 #define __LIBCOMM_H
 
 #define CENTER 0
-#define LEFT   1
-#define RIGHT  2
-#define BACK   3
+#define LEFT 1
+#define RIGHT 2
+#define BACK 3
 
 /*! Initializes Robot and Connects to Simulator 
  *  Parameters : 
@@ -22,71 +22,71 @@
  *                           with respect to the front of the robot (in degrees).
  *   Returns -1 in case of error
  */
-int InitRobot2 (char *name, int id, double IRSensorAngles[4], char *host);
+int InitRobot2(char* name, int id, double IRSensorAngles[4], char* host);
 
 /*! Gets the next Sensor Values sent by Simulator 
  *  if no message is present waits 
  *  Returns -1 in case of error 
  */
-int ReadSensors (void);
+int ReadSensors(void);
 
 /*  The following functions access values that have been read by ReadSensors() 
  *  they do not read new values 
  */
 
 /*  simulation time */
-unsigned int GetTime (void);
-unsigned int GetRunningTimeout (void);
+unsigned int GetTime(void);
+unsigned int GetRunningTimeout(void);
 
 /*! GetObstacleSensor value is inversely proportional to obstacle distance  
  *  id may be one of LEFT, RIGHT, CENTER or OTHER1 
  */
-double GetObstacleSensor (int id);
-    
+double GetObstacleSensor(int id);
+
 /*! Indicates if a new beacon measure has arrived. 
  *  The value of GetBeaconSensor is invalid when IsBeaconReady returns false
  */
 bool IsBeaconReady();
 
 struct beaconMeasure {
-        bool   beaconVisible;  /* true if robot can see beacon */
-        double beaconDir;      /* direction of beacon */
-                               /*   only valid if beaconVisible is true */
+    bool beaconVisible; /* true if robot can see beacon */
+    double beaconDir; /* direction of beacon */
+    /*   only valid if beaconVisible is true */
 };
 
 /* GetBeaconSensor value is the direction of Beacon 
  * in Robot coordinates (-180.0, 180.0) 
  */
-struct beaconMeasure GetBeaconSensor (void);
-    
+struct beaconMeasure GetBeaconSensor(void);
+
 /* GetCompassSensor value is the direction of Robot in Ground 
  * coordinates (-180.0, 180.0) 
  */
-double GetCompassSensor (void);
-    
-/* active when in Beacon area */
-bool GetGroundSensor (void);
- 
-/* active when robot collides */
-bool GetBumperSensor (void);
+double GetCompassSensor(void);
 
-/* Start */   
-bool GetStartButton (void);
+/* active when in Beacon area */
+bool GetGroundSensor(void);
+
+/* active when robot collides */
+bool GetBumperSensor(void);
+
+/* Start */
+bool GetStartButton(void);
 
 /* Stop */
-bool GetStopButton (void);
+bool GetStopButton(void);
 
 /* Verify if SetReturningLed() was executed */
-bool GetReturningLed (void);
+bool GetReturningLed(void);
 
 /* Verify if Finish() was executed */
-bool GetFinished (void);
+bool GetFinished(void);
 
 /* Return the simulation cycle time */
-int GetCycleTime (void);
+int GetCycleTime(void);
 
 /* Return the total simulation time */
-int GetFinalTime (void);
+int GetFinalTime(void);
 
 /* GPS sensor - can be used for debug, invoke simulator with "-gps" option */
 double GetX(void);
@@ -98,32 +98,30 @@ double GetDir(void);
  */
 
 /* Drive right motor with rPow and left motor with lPow - Powers in (-0.1,0.1) */
-bool DriveMotors (double lPow, double rPow);
+bool DriveMotors(double lPow, double rPow);
 
 /* Signal the end of phase 1 (go to target) */
-bool SetReturningLed (void);
-bool SetReturningLed2 (double lPow, double rPow);
+bool SetReturningLed(void);
+bool SetReturningLed2(double lPow, double rPow);
 
 /* Finish the round */
-bool Finish (void);
-bool Finish2 (double lPow, double rPow);
-
+bool Finish(void);
+bool Finish2(double lPow, double rPow);
 
 /*****
         Functions returning noise levels
 ******/
 
 /* Returns maximum additive noise of infra-red sensors */
-double GetNoiseObstacleSensor (void);
+double GetNoiseObstacleSensor(void);
 
 /* Returns maximum additive noise of beacon angular direction */
-double GetNoiseBeaconSensor (void);
+double GetNoiseBeaconSensor(void);
 
 /* Returns maximum additive noise of compass */
-double GetNoiseCompassSensor (void);
+double GetNoiseCompassSensor(void);
 
 /* Returns maximum multipicative noise of motors */
-double GetNoiseMotors (void);
+double GetNoiseMotors(void);
 
 #endif
-

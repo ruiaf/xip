@@ -37,13 +37,13 @@ class Meditador;
 
 #include "Action.h"
 #include "MathTools.h"
-#include "WorldState.h"
-#include "Structures.h"
+#include "MotorController.h"
 #include "Path.h"
 #include "Plan.h"
-#include "MotorController.h"
 #include "Position.h"
 #include "SensorRequest.h"
+#include "Structures.h"
+#include "WorldState.h"
 
 using namespace std;
 
@@ -53,7 +53,10 @@ using namespace std;
  * Pode estar a procurar o farol, a ir para o farol, a sair do farol,
  * ou a voltar para o início.
  */
-enum BehaveState {SEARCH_BEACON,GOTO_BEACON,GOTO_RETURN_BEACON,GOTO_START};
+enum BehaveState { SEARCH_BEACON,
+    GOTO_BEACON,
+    GOTO_RETURN_BEACON,
+    GOTO_START };
 
 #define BBEFORELAST 0
 #define BEFORELAST 1
@@ -64,94 +67,90 @@ enum BehaveState {SEARCH_BEACON,GOTO_BEACON,GOTO_RETURN_BEACON,GOTO_START};
  * Nesta classe são tomadas as decisões estratégicas.
  * É baseada numa maquina de estados.
  */
-class Meditator
-{
-	public:
-		/** \brief Aqui é inicializada a classe
+class Meditator {
+public:
+    /** \brief Aqui é inicializada a classe
 		 * 
 		 * Aqui é inicializada a classe
 		 */
-		Meditator(WorldState *w, MotorController * m);
+    Meditator(WorldState* w, MotorController* m);
 
-		/** \brief Determina a acção mais apropriada ao estado do mundo
+    /** \brief Determina a acção mais apropriada ao estado do mundo
 		 * 
 		 * Dependendo do objectivo, estado do mundo determina a melhor acção
 		 * a tomar em dado momento.
 		 */
-		Action * bestAction(void);
-		SensorRequest CalculateSensorRequest(void);
+    Action* bestAction(void);
+    SensorRequest CalculateSensorRequest(void);
 
+private:
+    /** \brief Determina a acção mais apropriada caso esteja à procura do farol */
+    Action* actionSearchBeacon();
 
+    /** \brief Determina a acção mais apropriada caso se esteja a dirigir para o farol */
+    Action* actionGoToBeacon();
 
-	private:
-		/** \brief Determina a acção mais apropriada caso esteja à procura do farol */
-		Action * actionSearchBeacon();
+    /** \brief Determina a acção mais apropriada caso se esteja a ir para o beacon de return */
+    Action* actionGoToReturnBeacon();
 
-		/** \brief Determina a acção mais apropriada caso se esteja a dirigir para o farol */
-		Action * actionGoToBeacon();
+    /** \brief Determina a acção mais apropriada caso se esteja a ir para a posição inicial */
+    Action* actionGoToStart();
 
-		/** \brief Determina a acção mais apropriada caso se esteja a ir para o beacon de return */
-		Action * actionGoToReturnBeacon();
+    /** \brief Determina a acção mais apropriada caso tenha colidido */
+    Action* dealWithCollision();
 
-		/** \brief Determina a acção mais apropriada caso se esteja a ir para a posição inicial */
-		Action * actionGoToStart();
-
-		/** \brief Determina a acção mais apropriada caso tenha colidido */
-		Action * dealWithCollision();  
-
-		/** \brief Retorna verdadeiro caso tenha conseguido encontrar o caminho para o final (A*)
+    /** \brief Retorna verdadeiro caso tenha conseguido encontrar o caminho para o final (A*)
 		 *         nos últimos ciclos
 		 */
-		bool reachedEndinLastCycles() { return notReachedCount < 5; }
+    bool reachedEndinLastCycles() { return notReachedCount < 5; }
 
-		void decideBeaconToReturn();
+    void decideBeaconToReturn();
 
+    /** \brief Último caminho planeado para chegar ao objectivo */
+    Path CurrentPath;
 
-		/** \brief Último caminho planeado para chegar ao objectivo */
-		Path CurrentPath;
+    /** \brief Estado do comportamento */
+    enum BehaveState behaveState;
 
-		/** \brief Estado do comportamento */
-		enum BehaveState behaveState;
+    /** \brief Estado do mundo */
+    WorldState* ws;
 
-		/** \brief Estado do mundo */
-		WorldState *ws;
+    /** \brief Camada de abstracção do motor */
+    MotorController* motor;
 
-		/** \brief Camada de abstracção do motor */
-		MotorController *motor;
+    /** \brief gerador de planos */
+    Plan* planner;
 
-		/** \brief gerador de planos */
-		Plan *planner;
-
-		/** \brief Serve para caso de o ciclo de acender o led de return
+    /** \brief Serve para caso de o ciclo de acender o led de return
 		 *         tenha sido perdido na rede, o estado seja detectado correctamente
 		 */
-		bool wantedToReturn;
+    bool wantedToReturn;
 
-		/** \brief Cancelar o comportamento de tratamento de colisões */
-		bool toAbort;
+    /** \brief Cancelar o comportamento de tratamento de colisões */
+    bool toAbort;
 
-		/** \brief Indica se no retorno o xip vai apenas por caminhos conhecidos
+    /** \brief Indica se no retorno o xip vai apenas por caminhos conhecidos
 		  ou se vai a explorar caminho
 		  */
-		bool goingThroughKnownPlaces;
+    bool goingThroughKnownPlaces;
 
-		/** \brief Número de ciclos em que não consegui chegar ao destino no A* */
-		int notReachedCount;
+    /** \brief Número de ciclos em que não consegui chegar ao destino no A* */
+    int notReachedCount;
 
-		/** \brief Conheço bem o caminho entre o farol e o início */
-		bool knowWellWayBetweenObjectives;
+    /** \brief Conheço bem o caminho entre o farol e o início */
+    bool knowWellWayBetweenObjectives;
 
-		/** \brief Diz se está a ser eficiente */
-		bool beingEfficient;
-		bool beingVeryEfficient;
+    /** \brief Diz se está a ser eficiente */
+    bool beingEfficient;
+    bool beingVeryEfficient;
 
-		int estimatedCyclesEndKnownPlaces;
-		int estimatedCyclesEndUnKnownPlaces;
-		int foundTime;
-		int lastReturningTime;
-		int numberOfCyclesToBeacon;
+    int estimatedCyclesEndKnownPlaces;
+    int estimatedCyclesEndUnKnownPlaces;
+    int foundTime;
+    int lastReturningTime;
+    int numberOfCyclesToBeacon;
 
-		WSbeacon * returnBeacon;
+    WSbeacon* returnBeacon;
 };
 
 #endif

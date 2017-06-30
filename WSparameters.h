@@ -5,37 +5,32 @@ class WSparameters;
 
 #include "LibComm.h"
 
-class WSparameters
-{
- public:
+class WSparameters {
+public:
+    WSparameters();
 
-  WSparameters();
+    void update();
 
-  void update();
+    int getSimTime() { return SimTime; }
+    int getNBeacons() { return NBeacons; }
+    int getCycleTime() { return CycleTime; }
 
-  int getSimTime() { return SimTime; }
-  int getNBeacons() { return NBeacons; }
-  int getCycleTime() { return CycleTime; }
+    double getCompassNoise() { return CompassNoise; }
+    double getBeaconNoise() { return BeaconNoise; }
+    double getObstacleNoise() { return ObstacleNoise; }
+    double getMotorsNoise() { return MotorsNoise; }
 
-  double getCompassNoise() { return CompassNoise; }
-  double getBeaconNoise() { return BeaconNoise; }
-  double getObstacleNoise() { return ObstacleNoise; }
-  double getMotorsNoise() { return MotorsNoise; }
+private:
+    void print();
 
- private:
+    int SimTime;
+    int NBeacons;
+    int CycleTime;
 
-  void print();
-
-  int SimTime;
-  int NBeacons;
-  int CycleTime;
-
-  double CompassNoise;
-  double BeaconNoise;
-  double ObstacleNoise;
-  double MotorsNoise;
-
+    double CompassNoise;
+    double BeaconNoise;
+    double ObstacleNoise;
+    double MotorsNoise;
 };
 
 #endif
-

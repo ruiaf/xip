@@ -4,26 +4,25 @@
 class Connection;
 
 #include <iostream>
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "LibComm.h"
 #include "defines.h"
 
 using namespace std;
 
-class Connection
-{
- public:
-  Connection(char *h, char *n, int p);
-  
-  void connect();
-  const char *getHost() { return host; }
+class Connection {
+public:
+    Connection(char* h, char* n, int p);
 
- private:
-  char host[100];
-  char name[20];
-  int rob_id;
+    void connect();
+    const char* getHost() { return host; }
+
+private:
+    char host[100];
+    char name[20];
+    int rob_id;
 };
 
 #endif

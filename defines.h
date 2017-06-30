@@ -10,8 +10,8 @@
 
 #define RAIO_FAROL (1.5)
 
-#define RUN      (1)
-#define STOP     (2)
+#define RUN (1)
+#define STOP (2)
 #define FINISHED (3)
 
 #define MAXDIST (1)

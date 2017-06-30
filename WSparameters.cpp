@@ -4,33 +4,34 @@
 
 WSparameters::WSparameters()
 {
-	update();
+    update();
 }
 
 void WSparameters::update()
 {
-	SimTime = GetFinalTime();
-	NBeacons = GetNumberOfBeacons();
-	//  RunningTimeout = GetRunningTimeout();
-	CycleTime = GetCycleTime();
+    SimTime = GetFinalTime();
+    NBeacons = GetNumberOfBeacons();
+    //  RunningTimeout = GetRunningTimeout();
+    CycleTime = GetCycleTime();
 
-	CompassNoise = GetNoiseCompassSensor();
-	BeaconNoise = GetNoiseBeaconSensor();
-	ObstacleNoise = GetNoiseObstacleSensor();
-	MotorsNoise = GetNoiseMotors();
+    CompassNoise = GetNoiseCompassSensor();
+    BeaconNoise = GetNoiseBeaconSensor();
+    ObstacleNoise = GetNoiseObstacleSensor();
+    MotorsNoise = GetNoiseMotors();
 
-	//  print();
+    //  print();
 }
 
-void WSparameters::print(){
+void WSparameters::print()
+{
 
-	printf("%d\n",SimTime);
-	printf("%d\n",NBeacons);
-	//  printf("%d\n",RunningTimeout);
-	printf("%d\n",CycleTime);
+    printf("%d\n", SimTime);
+    printf("%d\n", NBeacons);
+    //  printf("%d\n",RunningTimeout);
+    printf("%d\n", CycleTime);
 
-	printf("%.2f\n",CompassNoise);
-	printf("%.2f\n",BeaconNoise);
-	printf("%.2f\n",ObstacleNoise);
-	printf("%.2f\n",MotorsNoise);
+    printf("%.2f\n", CompassNoise);
+    printf("%.2f\n", BeaconNoise);
+    printf("%.2f\n", ObstacleNoise);
+    printf("%.2f\n", MotorsNoise);
 }

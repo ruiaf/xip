@@ -3,15 +3,14 @@
 
 class WSmaze;
 
+#include "Action.h"
 #include "LibComm.h"
 #include "MathTools.h"
-#include "Action.h"
-#include "defines.h"
-#include "WorldState.h"
 #include "Position.h"
 #include "WSposition.h"
-#include "MathTools.h"
+#include "WorldState.h"
 #include "assert.h"
+#include "defines.h"
 
 #define MIN_SENSOR_VALID 1.5
 #define PROB_CONSID_WALL 30
@@ -31,180 +30,171 @@ class WSmaze;
 using namespace std;
 
 typedef struct {
-  int size;
-  char mat[MAZE_DEF*12][MAZE_DEF*12];
-} matrix;  
+    int size;
+    char mat[MAZE_DEF * 12][MAZE_DEF * 12];
+} matrix;
 
-class WSmaze
-{
- public:
-  
-  WSmaze(WorldState *w);
-  void update();
-  char getMazePos(double x, double y);
-  
-  bool inBounds(double x,double y);
-  bool inMatrixBounds(int x,int y);
-  
-  char getSmallMazePos(double x, double y);
-  bool inSmallMazeBounds(double x,double y);
-  bool inSmallMazeMatrixBounds(int x,int y);
-  
-  bool validToGoWithMouse(int x, int y);
-  bool validToGoWithMouse(const DiscretePosition & pos) { return validToGoWithMouse(pos.getX(),pos.getY()); }
-  void loadWorldState(double gridx,double gridy,char mazeMap[140][285]);
-  double goodToGoWithMouse(int x, int y);
-  double goodToOptimizeWithMouse(int x, int y);
-  double goodToGoWithMouse(const DiscretePosition & pos) { return goodToGoWithMouse(pos.getX(),pos.getY());}
-  double goodToOptimizeWithMouse(const DiscretePosition & pos) { return goodToOptimizeWithMouse(pos.getX(),pos.getY());}
+class WSmaze {
+public:
+    WSmaze(WorldState* w);
+    void update();
+    char getMazePos(double x, double y);
 
-  bool CanGoWithMouse(int x, int y);
-  bool CanGoWithMouse(const DiscretePosition & pos) { return CanGoWithMouse(pos.getX(),pos.getY()); }
-  bool isKnown(int x, int y);
-  bool isKnown(const DiscretePosition & pos) { return isKnown(pos.getX(),pos.getY()); }
-  double nearWall(int x, int y);
-  void erodeMazeToUnknown();
-  void PaintMouseStoppedAhead();
+    bool inBounds(double x, double y);
+    bool inMatrixBounds(int x, int y);
 
-  void setToBounds(Position &pos);
-  
- private:
-  
-  void applyAllSensors();
-  void applySensor(double sensorVal, double sensorDist, double angle);
-  void applyCleanSensor(double sensorVal, double sensorDist, double angle);
-  void applyRobotMatrix(double X, double Y);
-  void applyWallRobotMatrix(double X, double Y);
-  void applyWallRobotMatrixAfterProcess(double X, double Y);
-  void createRobotMatrix(void);
+    char getSmallMazePos(double x, double y);
+    bool inSmallMazeBounds(double x, double y);
+    bool inSmallMazeMatrixBounds(int x, int y);
 
-  void applySensorMatrix(int ang,double sensordist,double sensor_val,double X, double Y,double conf);
-  void applyCleanSensorMatrix(int ang,double sensordist,double sensor_val,double X, double Y,double conf);
-  void setMazePos(double x, double y, char val,double certeza);
-  void setMazeMatPos(int xmazepos, int ymazepos, char val,double certeza);
-  void setMazeMatPosAfterProcess(int xmazepos, int ymazepos, char val,double certeza);
+    bool validToGoWithMouse(int x, int y);
+    bool validToGoWithMouse(const DiscretePosition& pos) { return validToGoWithMouse(pos.getX(), pos.getY()); }
+    void loadWorldState(double gridx, double gridy, char mazeMap[140][285]);
+    double goodToGoWithMouse(int x, int y);
+    double goodToOptimizeWithMouse(int x, int y);
+    double goodToGoWithMouse(const DiscretePosition& pos) { return goodToGoWithMouse(pos.getX(), pos.getY()); }
+    double goodToOptimizeWithMouse(const DiscretePosition& pos) { return goodToOptimizeWithMouse(pos.getX(), pos.getY()); }
 
-  void createSensor(void);
-  void createGoodMouseMatrix(void);
-  void createGoMouseMatrix(void);
-  void createKnownMatrix(void);
-  void createValidGoMatrix(void);
+    bool CanGoWithMouse(int x, int y);
+    bool CanGoWithMouse(const DiscretePosition& pos) { return CanGoWithMouse(pos.getX(), pos.getY()); }
+    bool isKnown(int x, int y);
+    bool isKnown(const DiscretePosition& pos) { return isKnown(pos.getX(), pos.getY()); }
+    double nearWall(int x, int y);
+    void erodeMazeToUnknown();
+    void PaintMouseStoppedAhead();
 
-  void clearGoodToGoMouseMatrix();
-  void clearIsKnownMatrix();
-  void clearCanGoWithMouseMatrix();
+    void setToBounds(Position& pos);
 
-  void doErodesAndDilates();
-  void adjustByMazesDifferences();  
-  void erode(char newmatrix[2*MAZE_DEF*LAB_X][2*MAZE_DEF*LAB_Y], char oldmatrix[2*MAZE_DEF*LAB_X][2*MAZE_DEF*LAB_Y]);
-  void dilate(char newmatrix[2*MAZE_DEF*LAB_X][2*MAZE_DEF*LAB_Y], char oldmatrix[2*MAZE_DEF*LAB_X][2*MAZE_DEF*LAB_Y]);
-    void erodeToUnknown(char newmatrix[2*MAZE_DEF*LAB_X][2*MAZE_DEF*LAB_Y], char oldmatrix[2*MAZE_DEF*LAB_X][2*MAZE_DEF*LAB_Y]);
+private:
+    void applyAllSensors();
+    void applySensor(double sensorVal, double sensorDist, double angle);
+    void applyCleanSensor(double sensorVal, double sensorDist, double angle);
+    void applyRobotMatrix(double X, double Y);
+    void applyWallRobotMatrix(double X, double Y);
+    void applyWallRobotMatrixAfterProcess(double X, double Y);
+    void createRobotMatrix(void);
 
+    void applySensorMatrix(int ang, double sensordist, double sensor_val, double X, double Y, double conf);
+    void applyCleanSensorMatrix(int ang, double sensordist, double sensor_val, double X, double Y, double conf);
+    void setMazePos(double x, double y, char val, double certeza);
+    void setMazeMatPos(int xmazepos, int ymazepos, char val, double certeza);
+    void setMazeMatPosAfterProcess(int xmazepos, int ymazepos, char val, double certeza);
 
-  /* funções de probabilidade */
-  void init_prob(void);
-  double distri_normal_acc(double dif,double dif_max);
-  
-  
-  /********************************************************/
-  /* SMALL WORLD STATE funcs                              */
-  /********************************************************/
-  
-  void setSmallMazePos(double x, double y, char val,double certeza);
-  void setSmallMazeMatPos(int xmazepos, int ymazepos, char val,double certeza);
-  void setSmallMazeMatPosAfterProcess(int xmazepos, int ymazepos, char val,double certeza);
-  
-  double compareWithSmallMaze(char s[2*LAB_X*MAZE_DEF][2*LAB_Y*MAZE_DEF],
-			      int  ssamples[2*LAB_X*MAZE_DEF][2*LAB_Y*MAZE_DEF],
-			      int dx,int dy);
-  void decreaseSmallMazeSamples();
+    void createSensor(void);
+    void createGoodMouseMatrix(void);
+    void createGoMouseMatrix(void);
+    void createKnownMatrix(void);
+    void createValidGoMatrix(void);
 
-  // variaveis
+    void clearGoodToGoMouseMatrix();
+    void clearIsKnownMatrix();
+    void clearCanGoWithMouseMatrix();
 
-  WorldState * ws;
-  
-  char aux[LAB_X*2*MAZE_DEF][LAB_Y*2*MAZE_DEF];
-  char aux2[LAB_X*2*MAZE_DEF][LAB_Y*2*MAZE_DEF];
-  char maze[2*LAB_X*MAZE_DEF][2*LAB_Y*MAZE_DEF];
-  char mazeErodedAndDilated[2*LAB_X*MAZE_DEF][2*LAB_Y*MAZE_DEF];
-  int samples[2*LAB_X*MAZE_DEF][2*LAB_Y*MAZE_DEF];
-  
-  char robotMatrix[MAZE_DEF][MAZE_DEF];
-  
-  // neste caso é restringido pela definição da matriz
-  char sensor[360][MAZE_DEF+1][3*MAZE_DEF][3*MAZE_DEF];
-  
-  // neste caso é restringido pela definição do sensor
-  
-  matrix sensor_long[360][10];
-  
-  /* funções de probabilidade */
-  double prob_acc[200];
-  
-  int MATminXpossible;
-  int MATmaxXpossible;
-  int MATminYpossible;
-  int MATmaxYpossible; 
+    void doErodesAndDilates();
+    void adjustByMazesDifferences();
+    void erode(char newmatrix[2 * MAZE_DEF * LAB_X][2 * MAZE_DEF * LAB_Y], char oldmatrix[2 * MAZE_DEF * LAB_X][2 * MAZE_DEF * LAB_Y]);
+    void dilate(char newmatrix[2 * MAZE_DEF * LAB_X][2 * MAZE_DEF * LAB_Y], char oldmatrix[2 * MAZE_DEF * LAB_X][2 * MAZE_DEF * LAB_Y]);
+    void erodeToUnknown(char newmatrix[2 * MAZE_DEF * LAB_X][2 * MAZE_DEF * LAB_Y], char oldmatrix[2 * MAZE_DEF * LAB_X][2 * MAZE_DEF * LAB_Y]);
 
-  double maxXpossible;
-  double minXpossible;
-  double maxYpossible;
-  double minYpossible;
-  
-  bool havePerfect;
+    /* funções de probabilidade */
+    void init_prob(void);
+    double distri_normal_acc(double dif, double dif_max);
 
-  double isGoodToGoWithMouseMatrix[2*LAB_X*MAZE_DEF][2*LAB_Y*MAZE_DEF];
-  int isKnownMatrix[2*LAB_X*MAZE_DEF][2*LAB_Y*MAZE_DEF];
-  int isCanGoWithMouseMatrix[2*LAB_X*MAZE_DEF][2*LAB_Y*MAZE_DEF];
-  
-  // optimizações de aplicação de matriz
-  int good_mouse_matrix_size;
-  int good_mouse_matrix[(2*GOOD_MOUSE_MARGIN+1)*(2*GOOD_MOUSE_MARGIN+1)][3];
-  int go_mouse_matrix_size;
-  int go_mouse_matrix[(2*GO_MOUSE_MARGIN+1)*(2*GO_MOUSE_MARGIN+1)][2];
-  int known_matrix_size;
-  int known_matrix[(2*KNOWN_MARGIN+1)*(2*KNOWN_MARGIN+1)][2];
-  int valid_go_matrix_size;
-  int valid_go_matrix[(2*VALID_GO_MARGIN+1)*(2*VALID_GO_MARGIN+1)][2];
+    /********************************************************/
+    /* SMALL WORLD STATE funcs                              */
+    /********************************************************/
 
-  /********************************************************/
-  /* SMALL WORLD STATE vars                               */
-  /********************************************************/
-  
-  char Smallaux[LAB_X*2*MAZE_DEF][LAB_Y*2*MAZE_DEF];
-  char Smallaux2[LAB_X*2*MAZE_DEF][LAB_Y*2*MAZE_DEF];
-  char Smallmaze[2*LAB_X*MAZE_DEF][2*LAB_Y*MAZE_DEF];
-  char SmallmazeErodedAndDilated[2*LAB_X*MAZE_DEF][2*LAB_Y*MAZE_DEF];
-  int  Smallsamples[2*LAB_X*MAZE_DEF][2*LAB_Y*MAZE_DEF];
+    void setSmallMazePos(double x, double y, char val, double certeza);
+    void setSmallMazeMatPos(int xmazepos, int ymazepos, char val, double certeza);
+    void setSmallMazeMatPosAfterProcess(int xmazepos, int ymazepos, char val, double certeza);
 
+    double compareWithSmallMaze(char s[2 * LAB_X * MAZE_DEF][2 * LAB_Y * MAZE_DEF],
+        int ssamples[2 * LAB_X * MAZE_DEF][2 * LAB_Y * MAZE_DEF],
+        int dx, int dy);
+    void decreaseSmallMazeSamples();
+
+    // variaveis
+
+    WorldState* ws;
+
+    char aux[LAB_X * 2 * MAZE_DEF][LAB_Y * 2 * MAZE_DEF];
+    char aux2[LAB_X * 2 * MAZE_DEF][LAB_Y * 2 * MAZE_DEF];
+    char maze[2 * LAB_X * MAZE_DEF][2 * LAB_Y * MAZE_DEF];
+    char mazeErodedAndDilated[2 * LAB_X * MAZE_DEF][2 * LAB_Y * MAZE_DEF];
+    int samples[2 * LAB_X * MAZE_DEF][2 * LAB_Y * MAZE_DEF];
+
+    char robotMatrix[MAZE_DEF][MAZE_DEF];
+
+    // neste caso é restringido pela definição da matriz
+    char sensor[360][MAZE_DEF + 1][3 * MAZE_DEF][3 * MAZE_DEF];
+
+    // neste caso é restringido pela definição do sensor
+
+    matrix sensor_long[360][10];
+
+    /* funções de probabilidade */
+    double prob_acc[200];
+
+    int MATminXpossible;
+    int MATmaxXpossible;
+    int MATminYpossible;
+    int MATmaxYpossible;
+
+    double maxXpossible;
+    double minXpossible;
+    double maxYpossible;
+    double minYpossible;
+
+    bool havePerfect;
+
+    double isGoodToGoWithMouseMatrix[2 * LAB_X * MAZE_DEF][2 * LAB_Y * MAZE_DEF];
+    int isKnownMatrix[2 * LAB_X * MAZE_DEF][2 * LAB_Y * MAZE_DEF];
+    int isCanGoWithMouseMatrix[2 * LAB_X * MAZE_DEF][2 * LAB_Y * MAZE_DEF];
+
+    // optimizações de aplicação de matriz
+    int good_mouse_matrix_size;
+    int good_mouse_matrix[(2 * GOOD_MOUSE_MARGIN + 1) * (2 * GOOD_MOUSE_MARGIN + 1)][3];
+    int go_mouse_matrix_size;
+    int go_mouse_matrix[(2 * GO_MOUSE_MARGIN + 1) * (2 * GO_MOUSE_MARGIN + 1)][2];
+    int known_matrix_size;
+    int known_matrix[(2 * KNOWN_MARGIN + 1) * (2 * KNOWN_MARGIN + 1)][2];
+    int valid_go_matrix_size;
+    int valid_go_matrix[(2 * VALID_GO_MARGIN + 1) * (2 * VALID_GO_MARGIN + 1)][2];
+
+    /********************************************************/
+    /* SMALL WORLD STATE vars                               */
+    /********************************************************/
+
+    char Smallaux[LAB_X * 2 * MAZE_DEF][LAB_Y * 2 * MAZE_DEF];
+    char Smallaux2[LAB_X * 2 * MAZE_DEF][LAB_Y * 2 * MAZE_DEF];
+    char Smallmaze[2 * LAB_X * MAZE_DEF][2 * LAB_Y * MAZE_DEF];
+    char SmallmazeErodedAndDilated[2 * LAB_X * MAZE_DEF][2 * LAB_Y * MAZE_DEF];
+    int Smallsamples[2 * LAB_X * MAZE_DEF][2 * LAB_Y * MAZE_DEF];
 };
 
-int good_mouse_matrix_cmp(const void *a, const void *b);
+int good_mouse_matrix_cmp(const void* a, const void* b);
 
-inline bool WSmaze::inBounds(double x,double y)
+inline bool WSmaze::inBounds(double x, double y)
 {
-  return (!(x >= maxXpossible || x < minXpossible) &&
-	  !(y >= maxYpossible || y < minYpossible));
+    return (!(x >= maxXpossible || x < minXpossible) && !(y >= maxYpossible || y < minYpossible));
 }
 
-inline bool WSmaze::inMatrixBounds(int x,int y)
+inline bool WSmaze::inMatrixBounds(int x, int y)
 {
-  return (!(x < MATminXpossible || x >= MATmaxXpossible) &&
-	  !(y < MATminYpossible || y >= MATmaxYpossible));
+    return (!(x < MATminXpossible || x >= MATmaxXpossible) && !(y < MATminYpossible || y >= MATmaxYpossible));
 }
 
-inline void WSmaze::setToBounds(Position &pos)
+inline void WSmaze::setToBounds(Position& pos)
 {
-  
-  if (pos.getX() > maxXpossible - 0.8)
-    pos.setX(maxXpossible - 0.8);
-  if (pos.getX() < minXpossible + 0.8)
-    pos.setX(minXpossible + 0.8);
-  if (pos.getY() > maxYpossible - 0.8)
-    pos.setY(maxYpossible - 0.8);
-  if (pos.getY() < minYpossible + 0.8)
-    pos.setY(minYpossible + 0.8);
-}
 
+    if (pos.getX() > maxXpossible - 0.8)
+        pos.setX(maxXpossible - 0.8);
+    if (pos.getX() < minXpossible + 0.8)
+        pos.setX(minXpossible + 0.8);
+    if (pos.getY() > maxYpossible - 0.8)
+        pos.setY(maxYpossible - 0.8);
+    if (pos.getY() < minYpossible + 0.8)
+        pos.setY(minYpossible + 0.8);
+}
 
 #endif

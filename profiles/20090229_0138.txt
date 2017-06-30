@@ -1,0 +1,1084 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls   s/call   s/call  name    
+ 20.79      2.27     2.27     1414     0.00     0.00  WSbeacon::update(bool)
+ 20.33      4.49     2.22  6695871     0.00     0.00  WSmaze::goodToGoWithMouse(int, int)
+ 10.53      5.64     1.15      393     0.00     0.00  WSbeacon::applySensor(double)
+  9.52      6.68     1.04        1     1.04     1.04  WSbeacon::createSensorMatrix()
+  8.33      7.59     0.91  1448370     0.00     0.00  WSmaze::validToGoWithMouse(int, int)
+  6.59      8.31     0.72 11545663     0.00     0.00  WSmaze::CanGoWithMouse(int, int)
+  4.76      8.83     0.52     1012     0.00     0.00  Plan::wayTo(Position const&, Position const&)
+  4.49      9.32     0.49      412     0.00     0.01  Plan::wayThroughKnownPlacesTo(Position const&, Position const&)
+  3.94      9.75     0.43        1     0.43     0.43  WSmaze::createSensor()
+  3.11     10.09     0.34  2915973     0.00     0.00  WSmaze::goodToOptimizeWithMouse(int, int)
+  2.56     10.37     0.28  4827281     0.00     0.00  WSmaze::isKnown(int, int)
+  2.11     10.60     0.23     4365     0.00     0.00  WSmaze::erode(char (*) [280], char (*) [280])
+  0.82     10.69     0.09     4365     0.00     0.00  WSmaze::dilate(char (*) [280], char (*) [280])
+  0.27     10.72     0.03     1457     0.00     0.00  WSbeaconsearch::update()
+  0.27     10.75     0.03     1455     0.00     0.00  WSmaze::doErodesAndDilates()
+  0.18     10.77     0.02  2280311     0.00     0.00  Path::update(Path*, double)
+  0.18     10.79     0.02     2630     0.00     0.00  WSmaze::applyCleanSensorMatrix(int, double, double, double, double, double)
+  0.18     10.81     0.02     1455     0.00     0.00  WSmaze::clearCanGoWithMouseMatrix()
+  0.18     10.83     0.02        1     0.02     0.02  Plan::Plan(WorldState*, MotorController*)
+  0.18     10.85     0.02                             WSmaze::nearWall(int, int)
+  0.09     10.86     0.01     1687     0.00     0.00  recv_packet(char*)
+  0.09     10.87     0.01     1455     0.00     0.00  WSmaze::clearGoodToGoMouseMatrix()
+  0.09     10.88     0.01     1455     0.00     0.00  WSmaze::update()
+  0.09     10.89     0.01     1424     0.00     0.00  Plan::optimizeRoute()
+  0.09     10.90     0.01                             socket_thread(void*)
+  0.09     10.91     0.01                             WSmaze::inSmallMazeMatrixBounds(int, int)
+  0.05     10.92     0.01     1456     0.00     0.00  MotorController::requestSensors(SensorRequest)
+  0.05     10.92     0.01     1424     0.00     0.00  MotorController::goToXY(double, double)
+  0.00     10.92     0.00  2898162     0.00     0.00  Heap::isEmpty()
+  0.00     10.92     0.00   156800     0.00     0.00  Path::init(DiscretePosition const&)
+  0.00     10.92     0.00    87147     0.00     0.00  Plan::tryWayToPoint(int)
+  0.00     10.92     0.00    10699     0.00     0.00  WSmotors::getInertiaLeft(int)
+  0.00     10.92     0.00    10699     0.00     0.00  WSmotors::getInertiaRight(int)
+  0.00     10.92     0.00     7419     0.00     0.00  Log::writeDebug(char const*)
+  0.00     10.92     0.00     5828     0.00     0.00  GetObstacleSensor(int)
+  0.00     10.92     0.00     5828     0.00     0.00  IsObstacleSensorValid(int)
+  0.00     10.92     0.00     2870     0.00     0.00  SetRequest(request_t)
+  0.00     10.92     0.00     2870     0.00     0.00  PerformAction(bool, bool, bool, double, double)
+  0.00     10.92     0.00     2866     0.00     0.00  DriveMotors(double, double)
+  0.00     10.92     0.00     2710     0.00     0.00  Plan::CyclesUntilObjective()
+  0.00     10.92     0.00     2406     0.00     0.00  WSmaze::applySensor(double, double, double)
+  0.00     10.92     0.00     2056     0.00     0.00  WorldState::setPlan(Plan*)
+  0.00     10.92     0.00     1572     0.00     0.00  ReadObstacleSensors(char const*, measures_t*)
+  0.00     10.92     0.00     1571     0.00     0.00  ReadBeaconSensors(char const*, measures_t*)
+  0.00     10.92     0.00     1457     0.00     0.00  GetFinished()
+  0.00     10.92     0.00     1457     0.00     0.00  ReadSensors()
+  0.00     10.92     0.00     1457     0.00     0.00  GetStopButton()
+  0.00     10.92     0.00     1457     0.00     0.00  GetStartButton()
+  0.00     10.92     0.00     1457     0.00     0.00  GetVisitingLed()
+  0.00     10.92     0.00     1457     0.00     0.00  IsCompassValid()
+  0.00     10.92     0.00     1457     0.00     0.00  GetBumperSensor()
+  0.00     10.92     0.00     1457     0.00     0.00  GetCompassSensor()
+  0.00     10.92     0.00     1457     0.00     0.00  IsGroundSensorValid()
+  0.00     10.92     0.00     1457     0.00     0.00  GetTime()
+  0.00     10.92     0.00     1457     0.00     0.00  WSposition::update()
+  0.00     10.92     0.00     1457     0.00     0.00  WorldState::update()
+  0.00     10.92     0.00     1457     0.00     0.00  WSsensors::update()
+  0.00     10.92     0.00     1456     0.00     0.00  Log::update()
+  0.00     10.92     0.00     1456     0.00     0.00  Meditator::CalculateSensorRequest()
+  0.00     10.92     0.00     1455     0.00     0.00  WSmaze::applyAllSensors()
+  0.00     10.92     0.00     1455     0.00     0.00  WSmaze::clearIsKnownMatrix()
+  0.00     10.92     0.00     1443     0.00     0.00  Action::Action(double, double)
+  0.00     10.92     0.00     1424     0.00     0.00  Heap::Heap()
+  0.00     10.92     0.00     1424     0.00     0.00  Heap::~Heap()
+  0.00     10.92     0.00     1424     0.00     0.00  Path::clear(DiscretePosition const&)
+  0.00     10.92     0.00     1424     0.00     0.00  Plan::findRoute(DiscretePosition, DiscretePosition)
+  0.00     10.92     0.00     1414     0.00     0.00  IsBeaconReady(int)
+  0.00     10.92     0.00     1414     0.00     0.00  MotorController::drive(Action*, SensorRequest)
+  0.00     10.92     0.00     1414     0.00     0.00  WSmotors::action_done(Action*)
+  0.00     10.92     0.00     1414     0.00     0.00  WSmotors::update()
+  0.00     10.92     0.00     1414     0.00     0.00  Meditator::bestAction()
+  0.00     10.92     0.00     1414     0.00     0.00  WSsensors::inAnyGround()
+  0.00     10.92     0.00     1408     0.00     0.00  WSsensors::CollidedRecently()
+  0.00     10.92     0.00     1405     0.00     0.00  WSposition::PredictPosition(Action*)
+  0.00     10.92     0.00     1405     0.00     0.00  MotorController::updateChangedActions()
+  0.00     10.92     0.00     1314     0.00     0.00  WSmotors::getMaxPowerFront(double, double, double*, double*)
+  0.00     10.92     0.00     1135     0.00     0.00  WSmotors::getMaxPowerLeftTurn(double, double, double*, double*)
+  0.00     10.92     0.00     1007     0.00     0.00  Plan::wayTo(Position const&)
+  0.00     10.92     0.00      994     0.00     0.00  WSbeacon::getPosition()
+  0.00     10.92     0.00      968     0.00     0.00  Meditator::actionGoToBeacon()
+  0.00     10.92     0.00      650     0.00     0.00  WSmaze::applySensorMatrix(int, double, double, double, double, double)
+  0.00     10.92     0.00      635     0.00     0.00  GetGroundSensor()
+  0.00     10.92     0.00      605     0.00     0.00  MotorController::goSlowToXY(double, double)
+  0.00     10.92     0.00      438     0.00     0.01  Meditator::actionGoToStart()
+  0.00     10.92     0.00      438     0.00     0.00  Meditator::decideBeaconToReturn()
+  0.00     10.92     0.00      397     0.00     0.01  Plan::wayThroughKnownPlacesTo(Position const&)
+  0.00     10.92     0.00      394     0.00     0.00  GetBeaconSensor(int)
+  0.00     10.92     0.00      393     0.00     0.00  WSposition::getLagDirDeg(int)
+  0.00     10.92     0.00      393     0.00     0.00  WSposition::getLagPos(int)
+  0.00     10.92     0.00       16     0.00     0.00  std::vector<DiscretePosition, std::allocator<DiscretePosition> >::_M_insert_aux(__gnu_cxx::__normal_iterator<DiscretePosition*, std::vector<DiscretePosition, std::allocator<DiscretePosition> > >, DiscretePosition const&)
+  0.00     10.92     0.00       10     0.00     0.00  std::vector<WSbeaconsearch::SearchArea, std::allocator<WSbeaconsearch::SearchArea> >::_M_insert_aux(__gnu_cxx::__normal_iterator<WSbeaconsearch::SearchArea*, std::vector<WSbeaconsearch::SearchArea, std::allocator<WSbeaconsearch::SearchArea> > >, WSbeaconsearch::SearchArea const&)
+  0.00     10.92     0.00        8     0.00     0.00  MotorController::dockXY(double, double)
+  0.00     10.92     0.00        3     0.00     0.00  Action::setType(atype, int)
+  0.00     10.92     0.00        2     0.00     0.00  SetReturningLed2(double, double)
+  0.00     10.92     0.00        2     0.00     0.00  Meditator::actionSearchBeacon()
+  0.00     10.92     0.00        1     0.00     0.00  global constructors keyed to _Z12dealwithexitv
+  0.00     10.92     0.00        1     0.00     0.00  global constructors keyed to _Z3guiPv
+  0.00     10.92     0.00        1     0.00     0.00  global constructors keyed to _Z9tServerWSPv
+  0.00     10.92     0.00        1     0.00     0.00  global constructors keyed to _ZN10ConnectionC2EPcS0_i
+  0.00     10.92     0.00        1     0.00     0.00  global constructors keyed to _ZN10WSpositionC2EP10WorldState
+  0.00     10.92     0.00        1     0.00     0.00  global constructors keyed to _ZN10WorldStateC2EiP3Log
+  0.00     10.92     0.00        1     0.00     0.00  global constructors keyed to _ZN14WSbeaconsearchC2EP10WorldState
+  0.00     10.92     0.00        1     0.00     0.00  global constructors keyed to _ZN15MotorControllerC2EP10WorldStateP3Log
+  0.00     10.92     0.00        1     0.00     0.00  global constructors keyed to _ZN3LogC2EP10WorldStateb
+  0.00     10.92     0.00        1     0.00     0.00  global constructors keyed to _ZN4HeapC2Ev
+  0.00     10.92     0.00        1     0.00     0.00  global constructors keyed to _ZN4Path11destinationE
+  0.00     10.92     0.00        1     0.00     0.00  global constructors keyed to _ZN4PlanC2EP10WorldStateP15MotorController
+  0.00     10.92     0.00        1     0.00     0.00  global constructors keyed to _ZN6ActionC2Edd
+  0.00     10.92     0.00        1     0.00     0.00  global constructors keyed to _ZN6WSmazeC2EP10WorldState
+  0.00     10.92     0.00        1     0.00     0.00  global constructors keyed to _ZN8WSbeaconC2EP10WorldStatei
+  0.00     10.92     0.00        1     0.00     0.00  global constructors keyed to _ZN8WSmotorsC2EP10WorldState
+  0.00     10.92     0.00        1     0.00     0.00  global constructors keyed to _ZN9MeditatorC2EP10WorldStateP15MotorController
+  0.00     10.92     0.00        1     0.00     0.00  global constructors keyed to _ZN9WSsensorsC2EP10WorldState
+  0.00     10.92     0.00        1     0.00     0.00  InitRobot2(char*, int, double*, char*)
+  0.00     10.92     0.00        1     0.00     0.00  GetCycleTime()
+  0.00     10.92     0.00        1     0.00     0.00  GetFinalTime()
+  0.00     10.92     0.00        1     0.00     0.00  GetNoiseMotors()
+  0.00     10.92     0.00        1     0.00     0.00  SetVisitingLed2(double, double)
+  0.00     10.92     0.00        1     0.00     0.00  GetNumberOfBeacons()
+  0.00     10.92     0.00        1     0.00     0.00  GetNoiseBeaconSensor()
+  0.00     10.92     0.00        1     0.00     0.00  GetNoiseCompassSensor()
+  0.00     10.92     0.00        1     0.00     0.00  GetNoiseObstacleSensor()
+  0.00     10.92     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00     10.92     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00     10.92     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00     10.92     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00     10.92     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00     10.92     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00     10.92     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00     10.92     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00     10.92     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00     10.92     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00     10.92     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00     10.92     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00     10.92     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00     10.92     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00     10.92     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00     10.92     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00     10.92     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00     10.92     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00     10.92     0.00        1     0.00     0.00  Finish2(double, double)
+  0.00     10.92     0.00        1     0.00     0.00  Connection::connect()
+  0.00     10.92     0.00        1     0.00     0.00  Connection::Connection(char*, char*, int)
+  0.00     10.92     0.00        1     0.00     0.00  WSposition::WSposition(WorldState*)
+  0.00     10.92     0.00        1     0.00     1.04  WorldState::onlineWSCreation()
+  0.00     10.92     0.00        1     0.00     0.43  WorldState::WorldState(int, Log*)
+  0.00     10.92     0.00        1     0.00     0.00  WSparameters::update()
+  0.00     10.92     0.00        1     0.00     0.00  WSparameters::WSparameters()
+  0.00     10.92     0.00        1     0.00     0.00  WSbeaconsearch::getProbableBeaconPos()
+  0.00     10.92     0.00        1     0.00     0.00  WSbeaconsearch::WSbeaconsearch(WorldState*)
+  0.00     10.92     0.00        1     0.00     0.00  MotorController::MotorController(WorldState*, Log*)
+  0.00     10.92     0.00        1     0.00     0.00  Log::init()
+  0.00     10.92     0.00        1     0.00     0.00  Log::Log(WorldState*, bool)
+  0.00     10.92     0.00        1     0.00     9.38  Mouse::behave()
+  0.00     10.92     0.00        1     0.00     0.00  Mouse::parse_opt(int, char**)
+  0.00     10.92     0.00        1     0.00     1.49  Mouse::Mouse(int, char**)
+  0.00     10.92     0.00        1     0.00     0.00  Action::Action(atype, double, double)
+  0.00     10.92     0.00        1     0.00     0.43  WSmaze::WSmaze(WorldState*)
+  0.00     10.92     0.00        1     0.00     0.00  WSbeacon::clearArroundBeacon()
+  0.00     10.92     0.00        1     0.00     1.04  WSbeacon::WSbeacon(WorldState*, int)
+  0.00     10.92     0.00        1     0.00     0.00  WSmotors::WSmotors(WorldState*)
+  0.00     10.92     0.00        1     0.00     0.02  Meditator::Meditator(WorldState*, MotorController*)
+  0.00     10.92     0.00        1     0.00     0.00  WSsensors::WSsensors(WorldState*)
+  0.00     10.92     0.00        1     0.00     0.00  std::vector<WSbeacon*, std::allocator<WSbeacon*> >::_M_insert_aux(__gnu_cxx::__normal_iterator<WSbeacon**, std::vector<WSbeacon*, std::allocator<WSbeacon*> > >, WSbeacon* const&)
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+ 
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this 
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 0.09% of 10.92 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]     99.5    0.00   10.87                 main [1]
+                0.00    9.38       1/1           Mouse::behave() [2]
+                0.00    1.49       1/1           Mouse::Mouse(int, char**) [13]
+-----------------------------------------------
+                0.00    9.38       1/1           main [1]
+[2]     85.9    0.00    9.38       1         Mouse::behave() [2]
+                0.00    5.27    1414/1414        Meditator::bestAction() [3]
+                0.00    4.10    1457/1457        WorldState::update() [4]
+                0.01    0.00    1456/1456        MotorController::requestSensors(SensorRequest) [45]
+                0.00    0.00    1456/1456        Log::update() [83]
+                0.00    0.00    1456/1456        Meditator::CalculateSensorRequest() [84]
+                0.00    0.00    1456/2866        DriveMotors(double, double) [65]
+                0.00    0.00    1414/1414        MotorController::drive(Action*, SensorRequest) [92]
+                0.00    0.00       1/1           Log::init() [165]
+-----------------------------------------------
+                0.00    5.27    1414/1414        Mouse::behave() [2]
+[3]     48.3    0.00    5.27    1414         Meditator::bestAction() [3]
+                0.00    2.76     967/968         Meditator::actionGoToBeacon() [8]
+                0.00    2.50     436/438         Meditator::actionGoToStart() [9]
+                0.00    0.01       2/2           Meditator::actionSearchBeacon() [44]
+                0.00    0.00      10/2056        WorldState::setPlan(Plan*) [68]
+                0.00    0.00      10/10699       WSmotors::getInertiaLeft(int) [58]
+                0.00    0.00      10/10699       WSmotors::getInertiaRight(int) [59]
+                0.00    0.00      10/1443        Action::Action(double, double) [86]
+-----------------------------------------------
+                0.00    4.10    1457/1457        Mouse::behave() [2]
+[4]     37.6    0.00    4.10    1457         WorldState::update() [4]
+                2.27    1.39    1414/1414        WSbeacon::update(bool) [5]
+                0.03    0.32    1455/1455        WSmaze::doErodesAndDilates() [23]
+                0.01    0.05    1455/1455        WSmaze::update() [30]
+                0.03    0.00    1457/1457        WSbeaconsearch::update() [32]
+                0.00    0.00    1457/1457        GetTime() [80]
+                0.00    0.00    1457/1457        GetStartButton() [74]
+                0.00    0.00    1457/1457        GetFinished() [71]
+                0.00    0.00    1457/1457        GetStopButton() [73]
+                0.00    0.00    1457/1457        WSsensors::update() [82]
+                0.00    0.00    1457/1457        WSposition::update() [81]
+                0.00    0.00    1457/1457        ReadSensors() [72]
+                0.00    0.00    1414/1414        WSsensors::inAnyGround() [95]
+                0.00    0.00    1414/7419        Log::writeDebug(char const*) [60]
+                0.00    0.00    1414/1414        IsBeaconReady(int) [91]
+                0.00    0.00    1414/1414        WSmotors::update() [94]
+-----------------------------------------------
+                2.27    1.39    1414/1414        WorldState::update() [4]
+[5]     33.5    2.27    1.39    1414         WSbeacon::update(bool) [5]
+                1.15    0.00     393/393         WSbeacon::applySensor(double) [14]
+                0.24    0.00  726621/6695871     WSmaze::goodToGoWithMouse(int, int) [12]
+                0.00    0.00     394/394         GetBeaconSensor(int) [105]
+                0.00    0.00     394/7419        Log::writeDebug(char const*) [60]
+                0.00    0.00     393/393         WSposition::getLagDirDeg(int) [106]
+                0.00    0.00       1/1           WSbeacon::clearArroundBeacon() [169]
+-----------------------------------------------
+                0.00    0.01       5/1012        Meditator::actionGoToStart() [9]
+                0.52    2.36    1007/1012        Plan::wayTo(Position const&) [7]
+[6]     26.5    0.52    2.37    1012         Plan::wayTo(Position const&, Position const&) [6]
+                1.17    0.00 3523669/6695871     WSmaze::goodToGoWithMouse(int, int) [12]
+                0.52    0.00  833821/1448370     WSmaze::validToGoWithMouse(int, int) [18]
+                0.41    0.00 6629271/11545663     WSmaze::CanGoWithMouse(int, int) [19]
+                0.01    0.24    1012/1424        Plan::optimizeRoute() [24]
+                0.01    0.00 1372176/2280311     Path::update(Path*, double) [33]
+                0.00    0.00    1012/1424        MotorController::goToXY(double, double) [46]
+                0.00    0.00 1668652/2898162     Heap::isEmpty() [56]
+                0.00    0.00    1012/1424        Path::clear(DiscretePosition const&) [89]
+                0.00    0.00    1012/1424        Heap::Heap() [87]
+                0.00    0.00    1012/1424        Heap::~Heap() [88]
+                0.00    0.00    1012/1424        Plan::findRoute(DiscretePosition, DiscretePosition) [90]
+                0.00    0.00     416/605         MotorController::goSlowToXY(double, double) [104]
+                0.00    0.00       2/16          std::vector<DiscretePosition, std::allocator<DiscretePosition> >::_M_insert_aux(__gnu_cxx::__normal_iterator<DiscretePosition*, std::vector<DiscretePosition, std::allocator<DiscretePosition> > >, DiscretePosition const&) [108]
+-----------------------------------------------
+                0.00    0.00       1/1007        Meditator::actionSearchBeacon() [44]
+                0.00    0.12      41/1007        Meditator::actionGoToStart() [9]
+                0.00    2.76     965/1007        Meditator::actionGoToBeacon() [8]
+[7]     26.3    0.00    2.88    1007         Plan::wayTo(Position const&) [7]
+                0.52    2.36    1007/1012        Plan::wayTo(Position const&, Position const&) [6]
+-----------------------------------------------
+                0.00    0.00       1/968         Meditator::actionSearchBeacon() [44]
+                0.00    2.76     967/968         Meditator::bestAction() [3]
+[8]     25.3    0.00    2.77     968         Meditator::actionGoToBeacon() [8]
+                0.00    2.76     965/1007        Plan::wayTo(Position const&) [7]
+                0.00    0.01       2/438         Meditator::actionGoToStart() [9]
+                0.00    0.00    1933/2056        WorldState::setPlan(Plan*) [68]
+                0.00    0.00     968/1408        WSsensors::CollidedRecently() [96]
+                0.00    0.00     965/994         WSbeacon::getPosition() [101]
+                0.00    0.00     965/2710        Plan::CyclesUntilObjective() [66]
+                0.00    0.00       3/3           Action::setType(atype, int) [111]
+                0.00    0.00       1/1443        Action::Action(double, double) [86]
+-----------------------------------------------
+                0.00    0.01       2/438         Meditator::actionGoToBeacon() [8]
+                0.00    2.50     436/438         Meditator::bestAction() [3]
+[9]     23.0    0.00    2.52     438         Meditator::actionGoToStart() [9]
+                0.00    2.30     397/397         Plan::wayThroughKnownPlacesTo(Position const&) [11]
+                0.00    0.12      41/1007        Plan::wayTo(Position const&) [7]
+                0.00    0.06     438/438         Meditator::decideBeaconToReturn() [31]
+                0.01    0.02       5/412         Plan::wayThroughKnownPlacesTo(Position const&, Position const&) [10]
+                0.00    0.01       5/1012        Plan::wayTo(Position const&, Position const&) [6]
+                0.00    0.00    1735/2710        Plan::CyclesUntilObjective() [66]
+                0.00    0.00     438/1408        WSsensors::CollidedRecently() [96]
+                0.00    0.00     429/7419        Log::writeDebug(char const*) [60]
+                0.00    0.00      91/2056        WorldState::setPlan(Plan*) [68]
+                0.00    0.00      19/994         WSbeacon::getPosition() [101]
+                0.00    0.00       8/8           MotorController::dockXY(double, double) [110]
+                0.00    0.00       1/10699       WSmotors::getInertiaLeft(int) [58]
+                0.00    0.00       1/10699       WSmotors::getInertiaRight(int) [59]
+                0.00    0.00       1/1           Action::Action(atype, double, double) [168]
+-----------------------------------------------
+                0.01    0.02       5/412         Meditator::actionGoToStart() [9]
+                0.01    0.05      10/412         Meditator::decideBeaconToReturn() [31]
+                0.47    1.83     397/412         Plan::wayThroughKnownPlacesTo(Position const&) [11]
+[10]    21.8    0.49    1.89     412         Plan::wayThroughKnownPlacesTo(Position const&, Position const&) [10]
+                0.81    0.00 2445581/6695871     WSmaze::goodToGoWithMouse(int, int) [12]
+                0.39    0.00  614549/1448370     WSmaze::validToGoWithMouse(int, int) [18]
+                0.31    0.00 4916392/11545663     WSmaze::CanGoWithMouse(int, int) [19]
+                0.28    0.00 4827281/4827281     WSmaze::isKnown(int, int) [27]
+                0.00    0.10     412/1424        Plan::optimizeRoute() [24]
+                0.01    0.00  908135/2280311     Path::update(Path*, double) [33]
+                0.00    0.00     412/1424        MotorController::goToXY(double, double) [46]
+                0.00    0.00 1229510/2898162     Heap::isEmpty() [56]
+                0.00    0.00     412/1424        Path::clear(DiscretePosition const&) [89]
+                0.00    0.00     412/1424        Heap::Heap() [87]
+                0.00    0.00     412/1424        Heap::~Heap() [88]
+                0.00    0.00     412/1424        Plan::findRoute(DiscretePosition, DiscretePosition) [90]
+                0.00    0.00     189/605         MotorController::goSlowToXY(double, double) [104]
+-----------------------------------------------
+                0.00    2.30     397/397         Meditator::actionGoToStart() [9]
+[11]    21.0    0.00    2.30     397         Plan::wayThroughKnownPlacesTo(Position const&) [11]
+                0.47    1.83     397/412         Plan::wayThroughKnownPlacesTo(Position const&, Position const&) [10]
+-----------------------------------------------
+                0.24    0.00  726621/6695871     WSbeacon::update(bool) [5]
+                0.81    0.00 2445581/6695871     Plan::wayThroughKnownPlacesTo(Position const&, Position const&) [10]
+                1.17    0.00 3523669/6695871     Plan::wayTo(Position const&, Position const&) [6]
+[12]    20.3    2.22    0.00 6695871         WSmaze::goodToGoWithMouse(int, int) [12]
+-----------------------------------------------
+                0.00    1.49       1/1           main [1]
+[13]    13.6    0.00    1.49       1         Mouse::Mouse(int, char**) [13]
+                0.00    1.04       1/1           WorldState::onlineWSCreation() [15]
+                0.00    0.43       1/1           WorldState::WorldState(int, Log*) [20]
+                0.00    0.02       1/1           Meditator::Meditator(WorldState*, MotorController*) [38]
+                0.00    0.00       1/1           Connection::connect() [48]
+                0.00    0.00       1/1           Mouse::parse_opt(int, char**) [167]
+                0.00    0.00       1/1           Connection::Connection(char*, char*, int) [158]
+                0.00    0.00       1/1           MotorController::MotorController(WorldState*, Log*) [164]
+                0.00    0.00       1/1           Log::Log(WorldState*, bool) [166]
+-----------------------------------------------
+                1.15    0.00     393/393         WSbeacon::update(bool) [5]
+[14]    10.5    1.15    0.00     393         WSbeacon::applySensor(double) [14]
+                0.00    0.00     393/393         WSposition::getLagPos(int) [107]
+-----------------------------------------------
+                0.00    1.04       1/1           Mouse::Mouse(int, char**) [13]
+[15]     9.5    0.00    1.04       1         WorldState::onlineWSCreation() [15]
+                0.00    1.04       1/1           WSbeacon::WSbeacon(WorldState*, int) [17]
+                0.00    0.00       1/1           WSparameters::update() [160]
+                0.00    0.00       1/1           WSparameters::WSparameters() [161]
+                0.00    0.00       1/1           std::vector<WSbeacon*, std::allocator<WSbeacon*> >::_M_insert_aux(__gnu_cxx::__normal_iterator<WSbeacon**, std::vector<WSbeacon*, std::allocator<WSbeacon*> > >, WSbeacon* const&) [172]
+-----------------------------------------------
+                1.04    0.00       1/1           WSbeacon::WSbeacon(WorldState*, int) [17]
+[16]     9.5    1.04    0.00       1         WSbeacon::createSensorMatrix() [16]
+-----------------------------------------------
+                0.00    1.04       1/1           WorldState::onlineWSCreation() [15]
+[17]     9.5    0.00    1.04       1         WSbeacon::WSbeacon(WorldState*, int) [17]
+                1.04    0.00       1/1           WSbeacon::createSensorMatrix() [16]
+-----------------------------------------------
+                0.39    0.00  614549/1448370     Plan::wayThroughKnownPlacesTo(Position const&, Position const&) [10]
+                0.52    0.00  833821/1448370     Plan::wayTo(Position const&, Position const&) [6]
+[18]     8.3    0.91    0.00 1448370         WSmaze::validToGoWithMouse(int, int) [18]
+-----------------------------------------------
+                0.31    0.00 4916392/11545663     Plan::wayThroughKnownPlacesTo(Position const&, Position const&) [10]
+                0.41    0.00 6629271/11545663     Plan::wayTo(Position const&, Position const&) [6]
+[19]     6.6    0.72    0.00 11545663         WSmaze::CanGoWithMouse(int, int) [19]
+-----------------------------------------------
+                0.00    0.43       1/1           Mouse::Mouse(int, char**) [13]
+[20]     3.9    0.00    0.43       1         WorldState::WorldState(int, Log*) [20]
+                0.00    0.43       1/1           WSmaze::WSmaze(WorldState*) [22]
+                0.00    0.00       1/1           WSsensors::WSsensors(WorldState*) [171]
+                0.00    0.00       1/1           WSmotors::WSmotors(WorldState*) [170]
+                0.00    0.00       1/1           WSposition::WSposition(WorldState*) [159]
+                0.00    0.00       1/1           WSbeaconsearch::WSbeaconsearch(WorldState*) [163]
+-----------------------------------------------
+                0.43    0.00       1/1           WSmaze::WSmaze(WorldState*) [22]
+[21]     3.9    0.43    0.00       1         WSmaze::createSensor() [21]
+-----------------------------------------------
+                0.00    0.43       1/1           WorldState::WorldState(int, Log*) [20]
+[22]     3.9    0.00    0.43       1         WSmaze::WSmaze(WorldState*) [22]
+                0.43    0.00       1/1           WSmaze::createSensor() [21]
+-----------------------------------------------
+                0.03    0.32    1455/1455        WorldState::update() [4]
+[23]     3.2    0.03    0.32    1455         WSmaze::doErodesAndDilates() [23]
+                0.23    0.00    4365/4365        WSmaze::erode(char (*) [280], char (*) [280]) [28]
+                0.09    0.00    4365/4365        WSmaze::dilate(char (*) [280], char (*) [280]) [29]
+-----------------------------------------------
+                0.00    0.10     412/1424        Plan::wayThroughKnownPlacesTo(Position const&, Position const&) [10]
+                0.01    0.24    1012/1424        Plan::wayTo(Position const&, Position const&) [6]
+[24]     3.2    0.01    0.34    1424         Plan::optimizeRoute() [24]
+                0.00    0.34   87147/87147       Plan::tryWayToPoint(int) [26]
+                0.00    0.00       5/16          std::vector<DiscretePosition, std::allocator<DiscretePosition> >::_M_insert_aux(__gnu_cxx::__normal_iterator<DiscretePosition*, std::vector<DiscretePosition, std::allocator<DiscretePosition> > >, DiscretePosition const&) [108]
+-----------------------------------------------
+                0.34    0.00 2915973/2915973     Plan::tryWayToPoint(int) [26]
+[25]     3.1    0.34    0.00 2915973         WSmaze::goodToOptimizeWithMouse(int, int) [25]
+-----------------------------------------------
+                0.00    0.34   87147/87147       Plan::optimizeRoute() [24]
+[26]     3.1    0.00    0.34   87147         Plan::tryWayToPoint(int) [26]
+                0.34    0.00 2915973/2915973     WSmaze::goodToOptimizeWithMouse(int, int) [25]
+-----------------------------------------------
+                0.28    0.00 4827281/4827281     Plan::wayThroughKnownPlacesTo(Position const&, Position const&) [10]
+[27]     2.6    0.28    0.00 4827281         WSmaze::isKnown(int, int) [27]
+-----------------------------------------------
+                0.23    0.00    4365/4365        WSmaze::doErodesAndDilates() [23]
+[28]     2.1    0.23    0.00    4365         WSmaze::erode(char (*) [280], char (*) [280]) [28]
+-----------------------------------------------
+                0.09    0.00    4365/4365        WSmaze::doErodesAndDilates() [23]
+[29]     0.8    0.09    0.00    4365         WSmaze::dilate(char (*) [280], char (*) [280]) [29]
+-----------------------------------------------
+                0.01    0.05    1455/1455        WorldState::update() [4]
+[30]     0.5    0.01    0.05    1455         WSmaze::update() [30]
+                0.02    0.00    1455/1455        WSmaze::clearCanGoWithMouseMatrix() [36]
+                0.00    0.02    1455/1455        WSmaze::applyAllSensors() [35]
+                0.01    0.00    1455/1455        WSmaze::clearGoodToGoMouseMatrix() [42]
+                0.00    0.00    1455/1455        WSmaze::clearIsKnownMatrix() [85]
+-----------------------------------------------
+                0.00    0.06     438/438         Meditator::actionGoToStart() [9]
+[31]     0.5    0.00    0.06     438         Meditator::decideBeaconToReturn() [31]
+                0.01    0.05      10/412         Plan::wayThroughKnownPlacesTo(Position const&, Position const&) [10]
+                0.00    0.00     420/7419        Log::writeDebug(char const*) [60]
+                0.00    0.00      20/2056        WorldState::setPlan(Plan*) [68]
+                0.00    0.00      10/994         WSbeacon::getPosition() [101]
+                0.00    0.00      10/2710        Plan::CyclesUntilObjective() [66]
+-----------------------------------------------
+                0.03    0.00    1457/1457        WorldState::update() [4]
+[32]     0.3    0.03    0.00    1457         WSbeaconsearch::update() [32]
+-----------------------------------------------
+                0.01    0.00  908135/2280311     Plan::wayThroughKnownPlacesTo(Position const&, Position const&) [10]
+                0.01    0.00 1372176/2280311     Plan::wayTo(Position const&, Position const&) [6]
+[33]     0.2    0.02    0.00 2280311         Path::update(Path*, double) [33]
+-----------------------------------------------
+                0.02    0.00    2630/2630        WSmaze::applyAllSensors() [35]
+[34]     0.2    0.02    0.00    2630         WSmaze::applyCleanSensorMatrix(int, double, double, double, double, double) [34]
+-----------------------------------------------
+                0.00    0.02    1455/1455        WSmaze::update() [30]
+[35]     0.2    0.00    0.02    1455         WSmaze::applyAllSensors() [35]
+                0.02    0.00    2630/2630        WSmaze::applyCleanSensorMatrix(int, double, double, double, double, double) [34]
+                0.00    0.00    2406/2406        WSmaze::applySensor(double, double, double) [67]
+                0.00    0.00     650/650         WSmaze::applySensorMatrix(int, double, double, double, double, double) [102]
+-----------------------------------------------
+                0.02    0.00    1455/1455        WSmaze::update() [30]
+[36]     0.2    0.02    0.00    1455         WSmaze::clearCanGoWithMouseMatrix() [36]
+-----------------------------------------------
+                0.02    0.00       1/1           Meditator::Meditator(WorldState*, MotorController*) [38]
+[37]     0.2    0.02    0.00       1         Plan::Plan(WorldState*, MotorController*) [37]
+                0.00    0.00  156800/156800      Path::init(DiscretePosition const&) [57]
+-----------------------------------------------
+                0.00    0.02       1/1           Mouse::Mouse(int, char**) [13]
+[38]     0.2    0.00    0.02       1         Meditator::Meditator(WorldState*, MotorController*) [38]
+                0.02    0.00       1/1           Plan::Plan(WorldState*, MotorController*) [37]
+-----------------------------------------------
+                                                 <spontaneous>
+[39]     0.2    0.02    0.00                 WSmaze::nearWall(int, int) [39]
+-----------------------------------------------
+                                                 <spontaneous>
+[40]     0.2    0.01    0.01                 socket_thread(void*) [40]
+                0.01    0.00    1686/1687        recv_packet(char*) [41]
+                0.00    0.00    1572/1572        ReadObstacleSensors(char const*, measures_t*) [69]
+                0.00    0.00    1571/1571        ReadBeaconSensors(char const*, measures_t*) [70]
+-----------------------------------------------
+                0.00    0.00       1/1687        InitRobot2(char*, int, double*, char*) [47]
+                0.01    0.00    1686/1687        socket_thread(void*) [40]
+[41]     0.1    0.01    0.00    1687         recv_packet(char*) [41]
+-----------------------------------------------
+                0.01    0.00    1455/1455        WSmaze::update() [30]
+[42]     0.1    0.01    0.00    1455         WSmaze::clearGoodToGoMouseMatrix() [42]
+-----------------------------------------------
+                                                 <spontaneous>
+[43]     0.1    0.01    0.00                 WSmaze::inSmallMazeMatrixBounds(int, int) [43]
+-----------------------------------------------
+                0.00    0.01       2/2           Meditator::bestAction() [3]
+[44]     0.1    0.00    0.01       2         Meditator::actionSearchBeacon() [44]
+                0.00    0.00       1/968         Meditator::actionGoToBeacon() [8]
+                0.00    0.00       1/1007        Plan::wayTo(Position const&) [7]
+                0.00    0.00       2/1408        WSsensors::CollidedRecently() [96]
+                0.00    0.00       2/2056        WorldState::setPlan(Plan*) [68]
+                0.00    0.00       1/1           WSbeaconsearch::getProbableBeaconPos() [162]
+-----------------------------------------------
+                0.01    0.00    1456/1456        Mouse::behave() [2]
+[45]     0.0    0.01    0.00    1456         MotorController::requestSensors(SensorRequest) [45]
+                0.00    0.00    1456/2870        SetRequest(request_t) [63]
+                0.00    0.00    1456/10699       WSmotors::getInertiaRight(int) [59]
+                0.00    0.00    1456/10699       WSmotors::getInertiaLeft(int) [58]
+-----------------------------------------------
+                0.00    0.00     412/1424        Plan::wayThroughKnownPlacesTo(Position const&, Position const&) [10]
+                0.00    0.00    1012/1424        Plan::wayTo(Position const&, Position const&) [6]
+[46]     0.0    0.01    0.00    1424         MotorController::goToXY(double, double) [46]
+                0.00    0.00    1424/10699       WSmotors::getInertiaLeft(int) [58]
+                0.00    0.00    1424/10699       WSmotors::getInertiaRight(int) [59]
+                0.00    0.00    1424/1443        Action::Action(double, double) [86]
+                0.00    0.00    1306/1314        WSmotors::getMaxPowerFront(double, double, double*, double*) [99]
+                0.00    0.00    1306/7419        Log::writeDebug(char const*) [60]
+                0.00    0.00    1130/1135        WSmotors::getMaxPowerLeftTurn(double, double, double*, double*) [100]
+-----------------------------------------------
+                0.00    0.00       1/1           Connection::connect() [48]
+[47]     0.0    0.00    0.00       1         InitRobot2(char*, int, double*, char*) [47]
+                0.00    0.00       1/1687        recv_packet(char*) [41]
+-----------------------------------------------
+                0.00    0.00       1/1           Mouse::Mouse(int, char**) [13]
+[48]     0.0    0.00    0.00       1         Connection::connect() [48]
+                0.00    0.00       1/1           InitRobot2(char*, int, double*, char*) [47]
+-----------------------------------------------
+                0.00    0.00 1229510/2898162     Plan::wayThroughKnownPlacesTo(Position const&, Position const&) [10]
+                0.00    0.00 1668652/2898162     Plan::wayTo(Position const&, Position const&) [6]
+[56]     0.0    0.00    0.00 2898162         Heap::isEmpty() [56]
+-----------------------------------------------
+                0.00    0.00  156800/156800      Plan::Plan(WorldState*, MotorController*) [37]
+[57]     0.0    0.00    0.00  156800         Path::init(DiscretePosition const&) [57]
+-----------------------------------------------
+                0.00    0.00       1/10699       Meditator::actionGoToStart() [9]
+                0.00    0.00       8/10699       MotorController::dockXY(double, double) [110]
+                0.00    0.00      10/10699       Meditator::bestAction() [3]
+                0.00    0.00    1424/10699       MotorController::goToXY(double, double) [46]
+                0.00    0.00    1456/10699       MotorController::requestSensors(SensorRequest) [45]
+                0.00    0.00    7800/10699       WSposition::update() [81]
+[58]     0.0    0.00    0.00   10699         WSmotors::getInertiaLeft(int) [58]
+-----------------------------------------------
+                0.00    0.00       1/10699       Meditator::actionGoToStart() [9]
+                0.00    0.00       8/10699       MotorController::dockXY(double, double) [110]
+                0.00    0.00      10/10699       Meditator::bestAction() [3]
+                0.00    0.00    1424/10699       MotorController::goToXY(double, double) [46]
+                0.00    0.00    1456/10699       MotorController::requestSensors(SensorRequest) [45]
+                0.00    0.00    7800/10699       WSposition::update() [81]
+[59]     0.0    0.00    0.00   10699         WSmotors::getInertiaRight(int) [59]
+-----------------------------------------------
+                0.00    0.00      43/7419        WSsensors::update() [82]
+                0.00    0.00     394/7419        WSbeacon::update(bool) [5]
+                0.00    0.00     420/7419        Meditator::decideBeaconToReturn() [31]
+                0.00    0.00     429/7419        Meditator::actionGoToStart() [9]
+                0.00    0.00    1306/7419        MotorController::goToXY(double, double) [46]
+                0.00    0.00    1405/7419        MotorController::drive(Action*, SensorRequest) [92]
+                0.00    0.00    1414/7419        WorldState::update() [4]
+                0.00    0.00    2008/7419        WSposition::update() [81]
+[60]     0.0    0.00    0.00    7419         Log::writeDebug(char const*) [60]
+-----------------------------------------------
+                0.00    0.00    5828/5828        WSsensors::update() [82]
+[61]     0.0    0.00    0.00    5828         GetObstacleSensor(int) [61]
+-----------------------------------------------
+                0.00    0.00    5828/5828        WSsensors::update() [82]
+[62]     0.0    0.00    0.00    5828         IsObstacleSensorValid(int) [62]
+-----------------------------------------------
+                0.00    0.00    1414/2870        MotorController::drive(Action*, SensorRequest) [92]
+                0.00    0.00    1456/2870        MotorController::requestSensors(SensorRequest) [45]
+[63]     0.0    0.00    0.00    2870         SetRequest(request_t) [63]
+-----------------------------------------------
+                0.00    0.00       1/2870        Finish2(double, double) [157]
+                0.00    0.00       1/2870        SetVisitingLed2(double, double) [134]
+                0.00    0.00       2/2870        SetReturningLed2(double, double) [112]
+                0.00    0.00    2866/2870        DriveMotors(double, double) [65]
+[64]     0.0    0.00    0.00    2870         PerformAction(bool, bool, bool, double, double) [64]
+-----------------------------------------------
+                0.00    0.00    1410/2866        MotorController::drive(Action*, SensorRequest) [92]
+                0.00    0.00    1456/2866        Mouse::behave() [2]
+[65]     0.0    0.00    0.00    2866         DriveMotors(double, double) [65]
+                0.00    0.00    2866/2870        PerformAction(bool, bool, bool, double, double) [64]
+-----------------------------------------------
+                0.00    0.00      10/2710        Meditator::decideBeaconToReturn() [31]
+                0.00    0.00     965/2710        Meditator::actionGoToBeacon() [8]
+                0.00    0.00    1735/2710        Meditator::actionGoToStart() [9]
+[66]     0.0    0.00    0.00    2710         Plan::CyclesUntilObjective() [66]
+-----------------------------------------------
+                0.00    0.00    2406/2406        WSmaze::applyAllSensors() [35]
+[67]     0.0    0.00    0.00    2406         WSmaze::applySensor(double, double, double) [67]
+-----------------------------------------------
+                0.00    0.00       2/2056        Meditator::actionSearchBeacon() [44]
+                0.00    0.00      10/2056        Meditator::bestAction() [3]
+                0.00    0.00      20/2056        Meditator::decideBeaconToReturn() [31]
+                0.00    0.00      91/2056        Meditator::actionGoToStart() [9]
+                0.00    0.00    1933/2056        Meditator::actionGoToBeacon() [8]
+[68]     0.0    0.00    0.00    2056         WorldState::setPlan(Plan*) [68]
+-----------------------------------------------
+                0.00    0.00    1572/1572        socket_thread(void*) [40]
+[69]     0.0    0.00    0.00    1572         ReadObstacleSensors(char const*, measures_t*) [69]
+-----------------------------------------------
+                0.00    0.00    1571/1571        socket_thread(void*) [40]
+[70]     0.0    0.00    0.00    1571         ReadBeaconSensors(char const*, measures_t*) [70]
+-----------------------------------------------
+                0.00    0.00    1457/1457        WorldState::update() [4]
+[71]     0.0    0.00    0.00    1457         GetFinished() [71]
+-----------------------------------------------
+                0.00    0.00    1457/1457        WorldState::update() [4]
+[72]     0.0    0.00    0.00    1457         ReadSensors() [72]
+-----------------------------------------------
+                0.00    0.00    1457/1457        WorldState::update() [4]
+[73]     0.0    0.00    0.00    1457         GetStopButton() [73]
+-----------------------------------------------
+                0.00    0.00    1457/1457        WorldState::update() [4]
+[74]     0.0    0.00    0.00    1457         GetStartButton() [74]
+-----------------------------------------------
+                0.00    0.00    1457/1457        WSsensors::update() [82]
+[75]     0.0    0.00    0.00    1457         GetVisitingLed() [75]
+-----------------------------------------------
+                0.00    0.00    1457/1457        WSsensors::update() [82]
+[76]     0.0    0.00    0.00    1457         IsCompassValid() [76]
+-----------------------------------------------
+                0.00    0.00    1457/1457        WSsensors::update() [82]
+[77]     0.0    0.00    0.00    1457         GetBumperSensor() [77]
+-----------------------------------------------
+                0.00    0.00    1457/1457        WSsensors::update() [82]
+[78]     0.0    0.00    0.00    1457         GetCompassSensor() [78]
+-----------------------------------------------
+                0.00    0.00    1457/1457        WSsensors::update() [82]
+[79]     0.0    0.00    0.00    1457         IsGroundSensorValid() [79]
+-----------------------------------------------
+                0.00    0.00    1457/1457        WorldState::update() [4]
+[80]     0.0    0.00    0.00    1457         GetTime() [80]
+-----------------------------------------------
+                0.00    0.00    1457/1457        WorldState::update() [4]
+[81]     0.0    0.00    0.00    1457         WSposition::update() [81]
+                0.00    0.00    7800/10699       WSmotors::getInertiaLeft(int) [58]
+                0.00    0.00    7800/10699       WSmotors::getInertiaRight(int) [59]
+                0.00    0.00    2008/7419        Log::writeDebug(char const*) [60]
+-----------------------------------------------
+                0.00    0.00    1457/1457        WorldState::update() [4]
+[82]     0.0    0.00    0.00    1457         WSsensors::update() [82]
+                0.00    0.00    5828/5828        GetObstacleSensor(int) [61]
+                0.00    0.00    5828/5828        IsObstacleSensorValid(int) [62]
+                0.00    0.00    1457/1457        GetBumperSensor() [77]
+                0.00    0.00    1457/1457        IsGroundSensorValid() [79]
+                0.00    0.00    1457/1457        GetCompassSensor() [78]
+                0.00    0.00    1457/1457        GetVisitingLed() [75]
+                0.00    0.00    1457/1457        IsCompassValid() [76]
+                0.00    0.00     635/635         GetGroundSensor() [103]
+                0.00    0.00      43/7419        Log::writeDebug(char const*) [60]
+-----------------------------------------------
+                0.00    0.00    1456/1456        Mouse::behave() [2]
+[83]     0.0    0.00    0.00    1456         Log::update() [83]
+-----------------------------------------------
+                0.00    0.00    1456/1456        Mouse::behave() [2]
+[84]     0.0    0.00    0.00    1456         Meditator::CalculateSensorRequest() [84]
+-----------------------------------------------
+                0.00    0.00    1455/1455        WSmaze::update() [30]
+[85]     0.0    0.00    0.00    1455         WSmaze::clearIsKnownMatrix() [85]
+-----------------------------------------------
+                0.00    0.00       1/1443        Meditator::actionGoToBeacon() [8]
+                0.00    0.00       8/1443        MotorController::dockXY(double, double) [110]
+                0.00    0.00      10/1443        Meditator::bestAction() [3]
+                0.00    0.00    1424/1443        MotorController::goToXY(double, double) [46]
+[86]     0.0    0.00    0.00    1443         Action::Action(double, double) [86]
+-----------------------------------------------
+                0.00    0.00     412/1424        Plan::wayThroughKnownPlacesTo(Position const&, Position const&) [10]
+                0.00    0.00    1012/1424        Plan::wayTo(Position const&, Position const&) [6]
+[87]     0.0    0.00    0.00    1424         Heap::Heap() [87]
+-----------------------------------------------
+                0.00    0.00     412/1424        Plan::wayThroughKnownPlacesTo(Position const&, Position const&) [10]
+                0.00    0.00    1012/1424        Plan::wayTo(Position const&, Position const&) [6]
+[88]     0.0    0.00    0.00    1424         Heap::~Heap() [88]
+-----------------------------------------------
+                0.00    0.00     412/1424        Plan::wayThroughKnownPlacesTo(Position const&, Position const&) [10]
+                0.00    0.00    1012/1424        Plan::wayTo(Position const&, Position const&) [6]
+[89]     0.0    0.00    0.00    1424         Path::clear(DiscretePosition const&) [89]
+-----------------------------------------------
+                0.00    0.00     412/1424        Plan::wayThroughKnownPlacesTo(Position const&, Position const&) [10]
+                0.00    0.00    1012/1424        Plan::wayTo(Position const&, Position const&) [6]
+[90]     0.0    0.00    0.00    1424         Plan::findRoute(DiscretePosition, DiscretePosition) [90]
+                0.00    0.00       9/16          std::vector<DiscretePosition, std::allocator<DiscretePosition> >::_M_insert_aux(__gnu_cxx::__normal_iterator<DiscretePosition*, std::vector<DiscretePosition, std::allocator<DiscretePosition> > >, DiscretePosition const&) [108]
+-----------------------------------------------
+                0.00    0.00    1414/1414        WorldState::update() [4]
+[91]     0.0    0.00    0.00    1414         IsBeaconReady(int) [91]
+-----------------------------------------------
+                0.00    0.00    1414/1414        Mouse::behave() [2]
+[92]     0.0    0.00    0.00    1414         MotorController::drive(Action*, SensorRequest) [92]
+                0.00    0.00    1414/2870        SetRequest(request_t) [63]
+                0.00    0.00    1414/1414        WSmotors::action_done(Action*) [93]
+                0.00    0.00    1410/2866        DriveMotors(double, double) [65]
+                0.00    0.00    1405/1405        MotorController::updateChangedActions() [98]
+                0.00    0.00    1405/1405        WSposition::PredictPosition(Action*) [97]
+                0.00    0.00    1405/7419        Log::writeDebug(char const*) [60]
+                0.00    0.00       2/2           SetReturningLed2(double, double) [112]
+                0.00    0.00       1/1           Finish2(double, double) [157]
+                0.00    0.00       1/1           SetVisitingLed2(double, double) [134]
+-----------------------------------------------
+                0.00    0.00    1414/1414        MotorController::drive(Action*, SensorRequest) [92]
+[93]     0.0    0.00    0.00    1414         WSmotors::action_done(Action*) [93]
+-----------------------------------------------
+                0.00    0.00    1414/1414        WorldState::update() [4]
+[94]     0.0    0.00    0.00    1414         WSmotors::update() [94]
+-----------------------------------------------
+                0.00    0.00    1414/1414        WorldState::update() [4]
+[95]     0.0    0.00    0.00    1414         WSsensors::inAnyGround() [95]
+-----------------------------------------------
+                0.00    0.00       2/1408        Meditator::actionSearchBeacon() [44]
+                0.00    0.00     438/1408        Meditator::actionGoToStart() [9]
+                0.00    0.00     968/1408        Meditator::actionGoToBeacon() [8]
+[96]     0.0    0.00    0.00    1408         WSsensors::CollidedRecently() [96]
+-----------------------------------------------
+                0.00    0.00    1405/1405        MotorController::drive(Action*, SensorRequest) [92]
+[97]     0.0    0.00    0.00    1405         WSposition::PredictPosition(Action*) [97]
+-----------------------------------------------
+                0.00    0.00    1405/1405        MotorController::drive(Action*, SensorRequest) [92]
+[98]     0.0    0.00    0.00    1405         MotorController::updateChangedActions() [98]
+-----------------------------------------------
+                0.00    0.00       8/1314        MotorController::dockXY(double, double) [110]
+                0.00    0.00    1306/1314        MotorController::goToXY(double, double) [46]
+[99]     0.0    0.00    0.00    1314         WSmotors::getMaxPowerFront(double, double, double*, double*) [99]
+-----------------------------------------------
+                0.00    0.00       5/1135        MotorController::dockXY(double, double) [110]
+                0.00    0.00    1130/1135        MotorController::goToXY(double, double) [46]
+[100]    0.0    0.00    0.00    1135         WSmotors::getMaxPowerLeftTurn(double, double, double*, double*) [100]
+-----------------------------------------------
+                0.00    0.00      10/994         Meditator::decideBeaconToReturn() [31]
+                0.00    0.00      19/994         Meditator::actionGoToStart() [9]
+                0.00    0.00     965/994         Meditator::actionGoToBeacon() [8]
+[101]    0.0    0.00    0.00     994         WSbeacon::getPosition() [101]
+-----------------------------------------------
+                0.00    0.00     650/650         WSmaze::applyAllSensors() [35]
+[102]    0.0    0.00    0.00     650         WSmaze::applySensorMatrix(int, double, double, double, double, double) [102]
+-----------------------------------------------
+                0.00    0.00     635/635         WSsensors::update() [82]
+[103]    0.0    0.00    0.00     635         GetGroundSensor() [103]
+-----------------------------------------------
+                0.00    0.00     189/605         Plan::wayThroughKnownPlacesTo(Position const&, Position const&) [10]
+                0.00    0.00     416/605         Plan::wayTo(Position const&, Position const&) [6]
+[104]    0.0    0.00    0.00     605         MotorController::goSlowToXY(double, double) [104]
+-----------------------------------------------
+                0.00    0.00     394/394         WSbeacon::update(bool) [5]
+[105]    0.0    0.00    0.00     394         GetBeaconSensor(int) [105]
+-----------------------------------------------
+                0.00    0.00     393/393         WSbeacon::update(bool) [5]
+[106]    0.0    0.00    0.00     393         WSposition::getLagDirDeg(int) [106]
+-----------------------------------------------
+                0.00    0.00     393/393         WSbeacon::applySensor(double) [14]
+[107]    0.0    0.00    0.00     393         WSposition::getLagPos(int) [107]
+-----------------------------------------------
+                0.00    0.00       2/16          Plan::wayTo(Position const&, Position const&) [6]
+                0.00    0.00       5/16          Plan::optimizeRoute() [24]
+                0.00    0.00       9/16          Plan::findRoute(DiscretePosition, DiscretePosition) [90]
+[108]    0.0    0.00    0.00      16         std::vector<DiscretePosition, std::allocator<DiscretePosition> >::_M_insert_aux(__gnu_cxx::__normal_iterator<DiscretePosition*, std::vector<DiscretePosition, std::allocator<DiscretePosition> > >, DiscretePosition const&) [108]
+-----------------------------------------------
+                0.00    0.00      10/10          WSbeaconsearch::WSbeaconsearch(WorldState*) [163]
+[109]    0.0    0.00    0.00      10         std::vector<WSbeaconsearch::SearchArea, std::allocator<WSbeaconsearch::SearchArea> >::_M_insert_aux(__gnu_cxx::__normal_iterator<WSbeaconsearch::SearchArea*, std::vector<WSbeaconsearch::SearchArea, std::allocator<WSbeaconsearch::SearchArea> > >, WSbeaconsearch::SearchArea const&) [109]
+-----------------------------------------------
+                0.00    0.00       8/8           Meditator::actionGoToStart() [9]
+[110]    0.0    0.00    0.00       8         MotorController::dockXY(double, double) [110]
+                0.00    0.00       8/10699       WSmotors::getInertiaLeft(int) [58]
+                0.00    0.00       8/10699       WSmotors::getInertiaRight(int) [59]
+                0.00    0.00       8/1314        WSmotors::getMaxPowerFront(double, double, double*, double*) [99]
+                0.00    0.00       8/1443        Action::Action(double, double) [86]
+                0.00    0.00       5/1135        WSmotors::getMaxPowerLeftTurn(double, double, double*, double*) [100]
+-----------------------------------------------
+                0.00    0.00       3/3           Meditator::actionGoToBeacon() [8]
+[111]    0.0    0.00    0.00       3         Action::setType(atype, int) [111]
+-----------------------------------------------
+                0.00    0.00       2/2           MotorController::drive(Action*, SensorRequest) [92]
+[112]    0.0    0.00    0.00       2         SetReturningLed2(double, double) [112]
+                0.00    0.00       2/2870        PerformAction(bool, bool, bool, double, double) [64]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [292]
+[113]    0.0    0.00    0.00       1         global constructors keyed to _Z12dealwithexitv [113]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [292]
+[114]    0.0    0.00    0.00       1         global constructors keyed to _Z3guiPv [114]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [292]
+[115]    0.0    0.00    0.00       1         global constructors keyed to _Z9tServerWSPv [115]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [292]
+[116]    0.0    0.00    0.00       1         global constructors keyed to _ZN10ConnectionC2EPcS0_i [116]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [292]
+[117]    0.0    0.00    0.00       1         global constructors keyed to _ZN10WSpositionC2EP10WorldState [117]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [292]
+[118]    0.0    0.00    0.00       1         global constructors keyed to _ZN10WorldStateC2EiP3Log [118]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [292]
+[119]    0.0    0.00    0.00       1         global constructors keyed to _ZN14WSbeaconsearchC2EP10WorldState [119]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [292]
+[120]    0.0    0.00    0.00       1         global constructors keyed to _ZN15MotorControllerC2EP10WorldStateP3Log [120]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [292]
+[121]    0.0    0.00    0.00       1         global constructors keyed to _ZN3LogC2EP10WorldStateb [121]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [292]
+[122]    0.0    0.00    0.00       1         global constructors keyed to _ZN4HeapC2Ev [122]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [292]
+[123]    0.0    0.00    0.00       1         global constructors keyed to _ZN4Path11destinationE [123]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [292]
+[124]    0.0    0.00    0.00       1         global constructors keyed to _ZN4PlanC2EP10WorldStateP15MotorController [124]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [292]
+[125]    0.0    0.00    0.00       1         global constructors keyed to _ZN6ActionC2Edd [125]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [292]
+[126]    0.0    0.00    0.00       1         global constructors keyed to _ZN6WSmazeC2EP10WorldState [126]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [292]
+[127]    0.0    0.00    0.00       1         global constructors keyed to _ZN8WSbeaconC2EP10WorldStatei [127]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [292]
+[128]    0.0    0.00    0.00       1         global constructors keyed to _ZN8WSmotorsC2EP10WorldState [128]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [292]
+[129]    0.0    0.00    0.00       1         global constructors keyed to _ZN9MeditatorC2EP10WorldStateP15MotorController [129]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [292]
+[130]    0.0    0.00    0.00       1         global constructors keyed to _ZN9WSsensorsC2EP10WorldState [130]
+-----------------------------------------------
+                0.00    0.00       1/1           WSparameters::update() [160]
+[131]    0.0    0.00    0.00       1         GetCycleTime() [131]
+-----------------------------------------------
+                0.00    0.00       1/1           WSparameters::update() [160]
+[132]    0.0    0.00    0.00       1         GetFinalTime() [132]
+-----------------------------------------------
+                0.00    0.00       1/1           WSparameters::update() [160]
+[133]    0.0    0.00    0.00       1         GetNoiseMotors() [133]
+-----------------------------------------------
+                0.00    0.00       1/1           MotorController::drive(Action*, SensorRequest) [92]
+[134]    0.0    0.00    0.00       1         SetVisitingLed2(double, double) [134]
+                0.00    0.00       1/2870        PerformAction(bool, bool, bool, double, double) [64]
+-----------------------------------------------
+                0.00    0.00       1/1           WSparameters::update() [160]
+[135]    0.0    0.00    0.00       1         GetNumberOfBeacons() [135]
+-----------------------------------------------
+                0.00    0.00       1/1           WSparameters::update() [160]
+[136]    0.0    0.00    0.00       1         GetNoiseBeaconSensor() [136]
+-----------------------------------------------
+                0.00    0.00       1/1           WSparameters::update() [160]
+[137]    0.0    0.00    0.00       1         GetNoiseCompassSensor() [137]
+-----------------------------------------------
+                0.00    0.00       1/1           WSparameters::update() [160]
+[138]    0.0    0.00    0.00       1         GetNoiseObstacleSensor() [138]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [292]
+[139]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [139]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [292]
+[140]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [140]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [292]
+[141]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [141]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [292]
+[142]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [142]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [292]
+[143]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [143]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [292]
+[144]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [144]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [292]
+[145]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [145]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [292]
+[146]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [146]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [292]
+[147]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [147]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [292]
+[148]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [148]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [292]
+[149]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [149]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [292]
+[150]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [150]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [292]
+[151]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [151]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [292]
+[152]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [152]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [292]
+[153]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [153]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [292]
+[154]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [154]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [292]
+[155]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [155]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [292]
+[156]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [156]
+-----------------------------------------------
+                0.00    0.00       1/1           MotorController::drive(Action*, SensorRequest) [92]
+[157]    0.0    0.00    0.00       1         Finish2(double, double) [157]
+                0.00    0.00       1/2870        PerformAction(bool, bool, bool, double, double) [64]
+-----------------------------------------------
+                0.00    0.00       1/1           Mouse::Mouse(int, char**) [13]
+[158]    0.0    0.00    0.00       1         Connection::Connection(char*, char*, int) [158]
+-----------------------------------------------
+                0.00    0.00       1/1           WorldState::WorldState(int, Log*) [20]
+[159]    0.0    0.00    0.00       1         WSposition::WSposition(WorldState*) [159]
+-----------------------------------------------
+                0.00    0.00       1/1           WorldState::onlineWSCreation() [15]
+[160]    0.0    0.00    0.00       1         WSparameters::update() [160]
+                0.00    0.00       1/1           GetNumberOfBeacons() [135]
+                0.00    0.00       1/1           GetFinalTime() [132]
+                0.00    0.00       1/1           GetNoiseCompassSensor() [137]
+                0.00    0.00       1/1           GetCycleTime() [131]
+                0.00    0.00       1/1           GetNoiseBeaconSensor() [136]
+                0.00    0.00       1/1           GetNoiseMotors() [133]
+                0.00    0.00       1/1           GetNoiseObstacleSensor() [138]
+-----------------------------------------------
+                0.00    0.00       1/1           WorldState::onlineWSCreation() [15]
+[161]    0.0    0.00    0.00       1         WSparameters::WSparameters() [161]
+-----------------------------------------------
+                0.00    0.00       1/1           Meditator::actionSearchBeacon() [44]
+[162]    0.0    0.00    0.00       1         WSbeaconsearch::getProbableBeaconPos() [162]
+-----------------------------------------------
+                0.00    0.00       1/1           WorldState::WorldState(int, Log*) [20]
+[163]    0.0    0.00    0.00       1         WSbeaconsearch::WSbeaconsearch(WorldState*) [163]
+                0.00    0.00      10/10          std::vector<WSbeaconsearch::SearchArea, std::allocator<WSbeaconsearch::SearchArea> >::_M_insert_aux(__gnu_cxx::__normal_iterator<WSbeaconsearch::SearchArea*, std::vector<WSbeaconsearch::SearchArea, std::allocator<WSbeaconsearch::SearchArea> > >, WSbeaconsearch::SearchArea const&) [109]
+-----------------------------------------------
+                0.00    0.00       1/1           Mouse::Mouse(int, char**) [13]
+[164]    0.0    0.00    0.00       1         MotorController::MotorController(WorldState*, Log*) [164]
+-----------------------------------------------
+                0.00    0.00       1/1           Mouse::behave() [2]
+[165]    0.0    0.00    0.00       1         Log::init() [165]
+-----------------------------------------------
+                0.00    0.00       1/1           Mouse::Mouse(int, char**) [13]
+[166]    0.0    0.00    0.00       1         Log::Log(WorldState*, bool) [166]
+-----------------------------------------------
+                0.00    0.00       1/1           Mouse::Mouse(int, char**) [13]
+[167]    0.0    0.00    0.00       1         Mouse::parse_opt(int, char**) [167]
+-----------------------------------------------
+                0.00    0.00       1/1           Meditator::actionGoToStart() [9]
+[168]    0.0    0.00    0.00       1         Action::Action(atype, double, double) [168]
+-----------------------------------------------
+                0.00    0.00       1/1           WSbeacon::update(bool) [5]
+[169]    0.0    0.00    0.00       1         WSbeacon::clearArroundBeacon() [169]
+-----------------------------------------------
+                0.00    0.00       1/1           WorldState::WorldState(int, Log*) [20]
+[170]    0.0    0.00    0.00       1         WSmotors::WSmotors(WorldState*) [170]
+-----------------------------------------------
+                0.00    0.00       1/1           WorldState::WorldState(int, Log*) [20]
+[171]    0.0    0.00    0.00       1         WSsensors::WSsensors(WorldState*) [171]
+-----------------------------------------------
+                0.00    0.00       1/1           WorldState::onlineWSCreation() [15]
+[172]    0.0    0.00    0.00       1         std::vector<WSbeacon*, std::allocator<WSbeacon*> >::_M_insert_aux(__gnu_cxx::__normal_iterator<WSbeacon**, std::vector<WSbeacon*, std::allocator<WSbeacon*> > >, WSbeacon* const&) [172]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+
+Index by function name
+
+ [113] global constructors keyed to _Z12dealwithexitv [145] __static_initialization_and_destruction_0(int, int) [37] Plan::Plan(WorldState*, MotorController*)
+ [114] global constructors keyed to _Z3guiPv [146] __static_initialization_and_destruction_0(int, int) [2] Mouse::behave()
+ [115] global constructors keyed to _Z9tServerWSPv [147] __static_initialization_and_destruction_0(int, int) [167] Mouse::parse_opt(int, char**)
+ [116] global constructors keyed to _ZN10ConnectionC2EPcS0_i [148] __static_initialization_and_destruction_0(int, int) [13] Mouse::Mouse(int, char**)
+ [117] global constructors keyed to _ZN10WSpositionC2EP10WorldState [149] __static_initialization_and_destruction_0(int, int) [111] Action::setType(atype, int)
+ [118] global constructors keyed to _ZN10WorldStateC2EiP3Log [150] __static_initialization_and_destruction_0(int, int) [168] Action::Action(atype, double, double)
+ [119] global constructors keyed to _ZN14WSbeaconsearchC2EP10WorldState [151] __static_initialization_and_destruction_0(int, int) [86] Action::Action(double, double)
+ [120] global constructors keyed to _ZN15MotorControllerC2EP10WorldStateP3Log [152] __static_initialization_and_destruction_0(int, int) [67] WSmaze::applySensor(double, double, double)
+ [121] global constructors keyed to _ZN3LogC2EP10WorldStateb [153] __static_initialization_and_destruction_0(int, int) [21] WSmaze::createSensor()
+ [122] global constructors keyed to _ZN4HeapC2Ev [154] __static_initialization_and_destruction_0(int, int) [19] WSmaze::CanGoWithMouse(int, int)
+ [123] global constructors keyed to _ZN4Path11destinationE [155] __static_initialization_and_destruction_0(int, int) [35] WSmaze::applyAllSensors()
+ [124] global constructors keyed to _ZN4PlanC2EP10WorldStateP15MotorController [156] __static_initialization_and_destruction_0(int, int) [102] WSmaze::applySensorMatrix(int, double, double, double, double, double)
+ [125] global constructors keyed to _ZN6ActionC2Edd [157] Finish2(double, double) [12] WSmaze::goodToGoWithMouse(int, int)
+ [126] global constructors keyed to _ZN6WSmazeC2EP10WorldState [80] GetTime() [85] WSmaze::clearIsKnownMatrix()
+ [127] global constructors keyed to _ZN8WSbeaconC2EP10WorldStatei [48] Connection::connect() [23] WSmaze::doErodesAndDilates()
+ [128] global constructors keyed to _ZN8WSmotorsC2EP10WorldState [158] Connection::Connection(char*, char*, int) [18] WSmaze::validToGoWithMouse(int, int)
+ [129] global constructors keyed to _ZN9MeditatorC2EP10WorldStateP15MotorController [106] WSposition::getLagDirDeg(int) [34] WSmaze::applyCleanSensorMatrix(int, double, double, double, double, double)
+ [130] global constructors keyed to _ZN9WSsensorsC2EP10WorldState [97] WSposition::PredictPosition(Action*) [25] WSmaze::goodToOptimizeWithMouse(int, int)
+  [47] InitRobot2(char*, int, double*, char*) [81] WSposition::update() [43] WSmaze::inSmallMazeMatrixBounds(int, int)
+  [63] SetRequest(request_t) [107] WSposition::getLagPos(int) [42] WSmaze::clearGoodToGoMouseMatrix()
+  [65] DriveMotors(double, double) [159] WSposition::WSposition(WorldState*) [36] WSmaze::clearCanGoWithMouseMatrix()
+  [71] GetFinished()          [15] WorldState::onlineWSCreation() [28] WSmaze::erode(char (*) [280], char (*) [280])
+  [72] ReadSensors()           [4] WorldState::update()   [29] WSmaze::dilate(char (*) [280], char (*) [280])
+  [41] recv_packet(char*)     [68] WorldState::setPlan(Plan*) [30] WSmaze::update()
+ [131] GetCycleTime()         [20] WorldState::WorldState(int, Log*) [27] WSmaze::isKnown(int, int)
+ [132] GetFinalTime()        [160] WSparameters::update() [39] WSmaze::nearWall(int, int)
+  [73] GetStopButton()       [161] WSparameters::WSparameters() [22] WSmaze::WSmaze(WorldState*)
+  [91] IsBeaconReady(int)    [162] WSbeaconsearch::getProbableBeaconPos() [14] WSbeacon::applySensor(double)
+  [64] PerformAction(bool, bool, bool, double, double) [32] WSbeaconsearch::update() [101] WSbeacon::getPosition()
+  [40] socket_thread(void*)  [163] WSbeaconsearch::WSbeaconsearch(WorldState*) [169] WSbeacon::clearArroundBeacon()
+ [133] GetNoiseMotors()      [104] MotorController::goSlowToXY(double, double) [16] WSbeacon::createSensorMatrix()
+  [74] GetStartButton()       [45] MotorController::requestSensors(SensorRequest) [5] WSbeacon::update(bool)
+  [75] GetVisitingLed()       [98] MotorController::updateChangedActions() [17] WSbeacon::WSbeacon(WorldState*, int)
+  [76] IsCompassValid()       [92] MotorController::drive(Action*, SensorRequest) [93] WSmotors::action_done(Action*)
+ [105] GetBeaconSensor(int)  [110] MotorController::dockXY(double, double) [58] WSmotors::getInertiaLeft(int)
+  [77] GetBumperSensor()      [46] MotorController::goToXY(double, double) [59] WSmotors::getInertiaRight(int)
+ [103] GetGroundSensor()     [164] MotorController::MotorController(WorldState*, Log*) [99] WSmotors::getMaxPowerFront(double, double, double*, double*)
+ [134] SetVisitingLed2(double, double) [60] Log::writeDebug(char const*) [100] WSmotors::getMaxPowerLeftTurn(double, double, double*, double*)
+  [78] GetCompassSensor()    [165] Log::init()            [94] WSmotors::update()
+ [112] SetReturningLed2(double, double) [83] Log::update() [170] WSmotors::WSmotors(WorldState*)
+  [61] GetObstacleSensor(int) [166] Log::Log(WorldState*, bool) [3] Meditator::bestAction()
+  [70] ReadBeaconSensors(char const*, measures_t*) [56] Heap::isEmpty() [9] Meditator::actionGoToStart()
+ [135] GetNumberOfBeacons()   [87] Heap::Heap()            [8] Meditator::actionGoToBeacon()
+  [79] IsGroundSensorValid()  [88] Heap::~Heap()          [44] Meditator::actionSearchBeacon()
+  [69] ReadObstacleSensors(char const*, measures_t*) [57] Path::init(DiscretePosition const&) [31] Meditator::decideBeaconToReturn()
+ [136] GetNoiseBeaconSensor() [89] Path::clear(DiscretePosition const&) [84] Meditator::CalculateSensorRequest()
+ [137] GetNoiseCompassSensor() [33] Path::update(Path*, double) [38] Meditator::Meditator(WorldState*, MotorController*)
+  [62] IsObstacleSensorValid(int) [24] Plan::optimizeRoute() [95] WSsensors::inAnyGround()
+ [138] GetNoiseObstacleSensor() [26] Plan::tryWayToPoint(int) [96] WSsensors::CollidedRecently()
+ [139] __static_initialization_and_destruction_0(int, int) [66] Plan::CyclesUntilObjective() [82] WSsensors::update()
+ [140] __static_initialization_and_destruction_0(int, int) [11] Plan::wayThroughKnownPlacesTo(Position const&) [171] WSsensors::WSsensors(WorldState*)
+ [141] __static_initialization_and_destruction_0(int, int) [10] Plan::wayThroughKnownPlacesTo(Position const&, Position const&) [108] std::vector<DiscretePosition, std::allocator<DiscretePosition> >::_M_insert_aux(__gnu_cxx::__normal_iterator<DiscretePosition*, std::vector<DiscretePosition, std::allocator<DiscretePosition> > >, DiscretePosition const&)
+ [142] __static_initialization_and_destruction_0(int, int) [7] Plan::wayTo(Position const&) [109] std::vector<WSbeaconsearch::SearchArea, std::allocator<WSbeaconsearch::SearchArea> >::_M_insert_aux(__gnu_cxx::__normal_iterator<WSbeaconsearch::SearchArea*, std::vector<WSbeaconsearch::SearchArea, std::allocator<WSbeaconsearch::SearchArea> > >, WSbeaconsearch::SearchArea const&)
+ [143] __static_initialization_and_destruction_0(int, int) [6] Plan::wayTo(Position const&, Position const&) [172] std::vector<WSbeacon*, std::allocator<WSbeacon*> >::_M_insert_aux(__gnu_cxx::__normal_iterator<WSbeacon**, std::vector<WSbeacon*, std::allocator<WSbeacon*> > >, WSbeacon* const&)
+ [144] __static_initialization_and_destruction_0(int, int) [90] Plan::findRoute(DiscretePosition, DiscretePosition)

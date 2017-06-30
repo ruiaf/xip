@@ -1,0 +1,5 @@
+./xip -pos 1 -name XIP1 &
+./xip -pos 2 -name XIP2 &
+./xip -pos 3 -name XIP3
+killall -KILL xip
+

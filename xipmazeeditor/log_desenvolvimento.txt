@@ -1,0 +1,30 @@
+2004/04/30-11:58 -> É preciso trocar todos os onPaint, e em vez de receberem 
+	a width e a height vão receber o deslocamento.
+
+2004/04/30-14:02 -> Troca do MazeCanvas de wxWindow para wxScrolledWindow.
+
+2004/04/30-16:11 -> O visual studio passa-se com path's grandes nos recursos.
+
+2004/04/30-16:11 -> Começo da implementação de uma grelha para a função 'snap to grid'.
+	A grelha vai começar com uma unidade inicial de 5 pixeis e depois pode ser ajustada.
+
+2004/04/30-17:01 -> Grid está implementada, agora seria preciso dar para redefinir a dimensão
+	dele através de um slider. Falta ainda meter a exportação e importação de ficheiros,
+	a posição x/y do cursor no status e talvez desaparecer com o cursor quando tá em snap to
+	grid.
+
+2004/05/01-11:43 -> A implementar a abertura de ficheiros de labirinto.
+
+2004/05/01-14:44 -> É necessário construir uma dialog para dar para escolher os dois ficheiros
+	que constituem um labirinto independemente.
+
+2004/05/01-16:14 -> O algoritmo de selecção precisa de ser melhorado para detectar o caso
+	excepcional de quando a linha horizontal passa pelo vértice.
+	
+2004/05/03-12:12 -> Editar o MazeFileHandler para poder usar a nova class MazeXMLTag.
+
+2004/05/03-18:45 -> Por a fazer OpenFiles no MyFrame e testar abrir ficheiros. Só uma tag 
+	está completa até ao momento.
+
+2004/05/03-19:34 -> Já existem scrollbars. Agora é preciso implementar direito, como fazer 
+	delete ao scrollwindow...

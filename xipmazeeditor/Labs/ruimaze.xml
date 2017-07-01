@@ -1,0 +1,13 @@
+<Lab Name="Xip Maze Editor" Width="24.000000" Height="12.000000">
+
+	<Beacon X="0.000000" Y="30.000000" Height="0.000000" />
+	<Target X="0.000000" Y="30.000000" Radius="0.000000" />
+
+	<Wall Height="50.000000">
+		<Corner X="3.000000" Y="2.000000" />
+		<Corner X="3.000000" Y="9.500000" />
+		<Corner X="6.500000" Y="9.500000" />
+		<Corner X="6.500000" Y="2.000000" />
+	</Wall>
+
+</Lab>
